@@ -1,0 +1,46 @@
+{
+  "name": "4g-design-system",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-scripts": "2.1.3",
+    "d3-shape": "^1.2.2",
+    "emotion": "^9.2.12",
+    "lodash": "^4.17.11",
+    "react-emotion": "^9.2.12",
+    "react-vis": "^1.11.5",
+    "recompose": "^0.30.0"
+  },
+  "scripts": {
+    "start": "uxpin-merge --webpack-config ./webpack.config.js --wrapper ./src/UXPinWrapper/UXPinWrapper.js --uxpin-domain merge.uxpin.cloud",
+    "server": "uxpin-merge server --webpack-config ./webpack.uxpin.config.js --wrapper ./src/UXPinWrapper/UXPinWrapper.js",
+    "test": "jest"
+  },
+  "type": "git",
+  "url": "git+https://github.com/Gahnterr/4g-design-system",
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@uxpin/merge-cli": "^1.1.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-emotion": "^9.2.11",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "enzyme-to-json": "^3.3.4",
+    "jest": "^23.6.0",
+    "jest-emotion": "^9.2.11",
+    "merge": "^1.2.1",
+    "source-map-loader": "^0.2.4",
+    "svg-react-loader": "^0.4.6",
+    "webpack": "^4.22.0",
+    "webpack-cli": "^3.1.2"
+  }
+}
