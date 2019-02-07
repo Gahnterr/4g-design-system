@@ -1,0 +1,51 @@
+{
+  "categorizedComponents": [
+    {
+      "components": [
+        {
+          "documentation": {
+            "examples": []
+          },
+          "info": {
+            "dirPath": "src/Button",
+            "implementation": {
+              "framework": "reactjs",
+              "lang": "javascript",
+              "path": "src/Button/Button.js"
+            },
+            "presets": [
+              {
+                "path": "src/Button/presets/0-default.jsx"
+              }
+            ]
+          },
+          "name": "Button",
+          "presets": [
+            {
+              "elements": {
+                "undefined": {
+                  "name": "Button",
+                  "props": {
+                    "children": "Botón primario"
+                  }
+                }
+              },
+              "name": "default"
+            }
+          ],
+          "properties": [
+            {
+              "defaultValue": {
+                "value": "Botón primario"
+              },
+              "isRequired": false,
+              "name": "children"
+            }
+          ]
+        }
+      ],
+      "name": "Componentes básicos"
+    }
+  ],
+  "name": "4G Design system"
+}
