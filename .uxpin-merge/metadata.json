@@ -23,25 +23,19 @@
           "presets": [
             {
               "elements": {
-                "undefined": {
+                "1": {
                   "name": "Button",
                   "props": {
-                    "children": "Botón primario"
+                    "children": "Button",
+                    "type": "primary"
                   }
                 }
               },
-              "name": "default"
+              "name": "default",
+              "rootId": "1"
             }
           ],
-          "properties": [
-            {
-              "defaultValue": {
-                "value": "Botón primario"
-              },
-              "isRequired": false,
-              "name": "children"
-            }
-          ]
+          "properties": []
         }
       ],
       "name": "Componentes básicos"

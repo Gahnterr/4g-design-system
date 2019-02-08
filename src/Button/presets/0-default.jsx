@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Button from '../Button';
 
-export default <Button>Botón primario</Button>;
+export default <Button uxpId="1" type="primary">Button</Button>;

@@ -1,0 +1,26 @@
+{
+  "default": {
+    "primario": {
+      "light": "#63A4FF",
+      "base": "#1976D2",
+      "dark": "#004BA0"
+    },
+    "secundario": {
+      "light": "#10DBCF",
+      "base": "#00A99E",
+      "dark": "#03807D"
+    }
+  },
+  "movil": {
+    "primario": {
+      "light": "#6975F2",
+      "base": "#2A4ABF",
+      "dark": "#6975F2"
+    },
+    "secundario": {
+      "light": "#FF9C42",
+      "base": "#FF6B06",
+      "dark": "#C43A00"
+    }
+  }
+}
