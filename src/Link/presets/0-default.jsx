@@ -1,3 +1,3 @@
 import Link from '../Link';
 
-export default <Link>Botón de tipo link</Link>;
+export default <Link size="regular">Botón de tipo link</Link>;
