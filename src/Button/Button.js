@@ -33,7 +33,7 @@ Button.PropTypes = {
   /**
    * The content of the button.
    */
-  children: PropTypes.node,
+  children: PropTypes.string,
   onClick: PropTypes.func,
   type: PropTypes.oneOf[('primary', 'secondary')],
 };
