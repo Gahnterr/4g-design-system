@@ -3,7 +3,7 @@ module.exports = {
     categories: [
       {
         name: 'Componentes básicos',
-        include: ['src/Button/Button.js'],
+        include: ['src/Button/Button.js', 'src/Link/Link.js'],
       },
     ],
   },

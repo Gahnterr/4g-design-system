@@ -1,0 +1,17 @@
+{
+  "fontFamily": "Roboto, 'Arial', sans-serif",
+  "weight": {
+    "regular": "400",
+    "medium": "500",
+    "bold": "700"
+  },
+  "size": {
+    "xs": 11,
+    "s": 12,
+    "m": 14,
+    "l": 16,
+    "xl": 18,
+    "xxl": 21,
+    "xxxl": 24
+  }
+}
