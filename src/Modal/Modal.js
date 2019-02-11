@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Button from '../Button/Button.js';
-import {PropTypes} from 'prop-types';
+import PropTypes from 'prop-types';
 import colors from '../styles/colors.json';
 
 const stylesModalContainer = `
