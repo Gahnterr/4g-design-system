@@ -5,7 +5,7 @@ import typography from '../styles/typography.json';
 
 const styles = (size, disabled) => `
     display: flex;
-    width: auto;
+    width: fit-content;
     font-family: ${typography.fontFamily};
     font-size: ${size === 'regular' ? typography.size.l : size === 'compacto' ? typography.size.m : null}px;
     font-weight: ${typography.weight.regular};
