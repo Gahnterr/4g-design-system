@@ -8,9 +8,8 @@ import typography from '../styles/typography.json';
 const stylesModalContainer = `
   display: flex;
   position: fixed;
-  place-content: start start;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 `;
 
@@ -58,6 +57,7 @@ const stylesBody = `
   height: 100%;
   padding: 20px;
   background-color: ${colors.constantes.fondo.otros};
+  color: ${colors.constantes.texto.regular};
 `;
 
 const stylesFooter = `
@@ -69,35 +69,53 @@ const stylesFooter = `
   width: 100%;
   height: 80px;
   background-color: ${colors.constantes.fondo.general};
+  button {
+    margin-left: 10px;
+  }
+  a {
+    margin-right: auto; 
+  }
 `;
 
 class Modal extends Component {
   constructor (props) {
     super (props);
-    this.state = {show: false};
+    this.state = {show: this.props.show};
   }
 
+  closeModal = () => {
+    this.setState ({show: false});
+  };
+
   render () {
-    return (
-      <div className="modal-container" css={stylesModalContainer}>
-        <div
-          className="modal-window"
-          css={stylesModalWindow (this.props.width, this.props.height)}
-        >
-          <header css={stylesHeader}>
-            <h1 css={stylesH1}>{this.props.title}</h1>
-          </header>
-          <div className="body" css={stylesBody}>
-            {this.props.children}
+    const props = this.props;
+    const state = this.state;
+    return state.show
+      ? <div className="modal-container" css={stylesModalContainer}>
+          <div
+            className="modal-window"
+            css={stylesModalWindow (props.width, props.height)}
+          >
+            <header css={stylesHeader}>
+              <h1 css={stylesH1}>{props.title}</h1>
+            </header>
+            <div className="body" css={stylesBody}>
+              {props.children}
+            </div>
+            <footer css={stylesFooter}>
+              <Button type="primario" onClick={props.primaryButtonAction}>
+                {props.primaryButtonLabel}
+              </Button>
+              <Button type="secundario" onClick={props.secondaryButtonAction}>
+                {props.secondaryButtonLabel}
+              </Button>
+              <Link size="regular" onClick={this.closeModal}>
+                {props.linkLabel}
+              </Link>
+            </footer>
           </div>
-          <footer css={stylesFooter}>
-            <Button type="primario">{this.props.primaryButtonLabel}</Button>
-            <Button type="secundario">{this.props.secondaryButtonLabel}</Button>
-            <Link>{this.props.linkLabel}</Link>
-          </footer>
         </div>
-      </div>
-    );
+      : null;
   }
 }
 
@@ -126,6 +144,26 @@ Modal.propTypes = {
    * Texto a mostrar en el botón primario del modal.
    */
   primaryButtonLabel: PropTypes.string,
+  /**
+   * Define las acciones que realizará el botón primario al ser presionado.
+   */
+  primaryButtonAction: PropTypes.func,
+  /**
+   * Texto a mostrar en el botón secundario del modal.
+   */
+  secondaryButtonLabel: PropTypes.string,
+  /**
+   * Define las acciones que realizará el botón secundario al ser presionado.
+   */
+  secondaryButtonAction: PropTypes.func,
+  /**
+   * Texto a mostrar en el botón destructivo del modal.
+   */
+  linkLabel: PropTypes.string,
+  /**
+   * Aquí se indica si el modal se mostrará o se ocultará.
+   */
+  show: PropTypes.bool,
 };
 
 export default Modal;
