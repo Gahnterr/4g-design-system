@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Button from '../Button/Button.js';
 import Link from '../Link/Link.js';
+import Icon from '../Icon/Icon.js';
 import PropTypes from 'prop-types';
 import colors from '../styles/colors.json';
 import typography from '../styles/typography.json';
@@ -11,6 +12,17 @@ const stylesModalContainer = `
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
+
+  animation: fade 150ms linear;
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 const stylesModalWindow = (width, height) => `
@@ -28,6 +40,17 @@ const stylesModalWindow = (width, height) => `
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  animation: openModal 350ms cubic-bezier(0.335, 1.650, 0.280, 1.010);
+
+  @keyframes openModal {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
 `;
 
 const stylesHeader = `
@@ -98,6 +121,7 @@ class Modal extends Component {
           >
             <header css={stylesHeader}>
               <h1 css={stylesH1}>{props.title}</h1>
+              <Icon size="lg" />
             </header>
             <div className="body" css={stylesBody}>
               {props.children}

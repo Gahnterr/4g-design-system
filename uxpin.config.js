@@ -7,6 +7,7 @@ module.exports = {
           'src/Button/Button.js',
           'src/Link/Link.js',
           'src/Modal/Modal.js',
+          'src/Icon/Icon.js',
         ],
       },
     ],
