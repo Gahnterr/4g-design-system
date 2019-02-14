@@ -5,6 +5,7 @@ import Icon from '../Icon/Icon.js';
 import PropTypes from 'prop-types';
 import colors from '../styles/colors.json';
 import typography from '../styles/typography.json';
+import '../styles/font.css';
 
 const stylesModalContainer = `
   display: flex;
@@ -101,10 +102,7 @@ const stylesFooter = `
 `;
 
 class Modal extends Component {
-  constructor (props) {
-    super (props);
-    this.state = {show: this.props.show};
-  }
+  state = {show: this.props.show};
 
   closeModal = () => {
     this.setState ({show: false});

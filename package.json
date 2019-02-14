@@ -19,7 +19,8 @@
     "recompose": "^0.30.0",
     "style-loader": "^0.23.1",
     "styled-components": "^4.1.3",
-    "url-loader": "^1.1.2"
+    "url-loader": "^1.1.2",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "uxpin-merge --webpack-config ./webpack.config.js --wrapper ./src/UXPinWrapper/UXPinWrapper.js --uxpin-domain merge.uxpin.cloud",

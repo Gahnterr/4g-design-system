@@ -8,6 +8,8 @@ module.exports = {
           'src/Link/Link.js',
           'src/Modal/Modal.js',
           'src/Icon/Icon.js',
+          'src/Text/Text.js',
+          'src/Input/Input.js',
         ],
       },
     ],
