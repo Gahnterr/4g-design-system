@@ -6,11 +6,15 @@ module.exports = {
         include: [
           'src/Button/Button.js',
           'src/Link/Link.js',
-          'src/Modal/Modal.js',
           'src/Icon/Icon.js',
           'src/Text/Text.js',
+          'src/Form/Form.js',
           'src/Input/Input.js',
         ],
+      },
+      {
+        name: 'Componentes avanzados',
+        include: ['src/Modal/Modal.js'],
       },
     ],
   },
