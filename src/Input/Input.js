@@ -1,26 +1,31 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import typography from '../styles/typography.json'
-import colors from '../styles/colors.json'
-import '../styles/font.css'
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import typography from '../styles/typography.json';
+import colors from '../styles/colors.json';
+import '../styles/font.css';
 
 export default class Input extends Component {
   state = {
     value: this.props.value,
-    error: this.props.error
-  }
+    error: this.props.error,
+  };
+
+  testRegex = () => {
+    const regex = this.props.regex;
+    const str = this.state.value;
+    regex.test (str)
+      ? this.setState ({error: false})
+      : this.setState ({error: true});
+  };
 
   handleChange = e => {
-    setState({ value: e.target.value })
-  }
-
-  toggleError = () => {
-    this.setState(() => {})
-  }
+    this.setState ({value: e.target.value});
+    this.testRegex ();
+  };
 
   render () {
-    const props = this.props
-    const state = this.state
+    const props = this.props;
+    const state = this.state;
 
     const stylesLabel = `
       display: block;
@@ -31,7 +36,7 @@ export default class Input extends Component {
       color: ${colors.constantes.texto.regular};
       font-size: ${typography.size.m};
       opacity: ${props.disabled ? '0.5' : '1'};
-    `
+    `;
 
     const stylesInput = `
       display: block;
@@ -42,18 +47,14 @@ export default class Input extends Component {
       font-family: ${typography.fontFamily};
       font-size: ${typography.size.m};
       color: ${colors.constantes.texto.regular};
-      border: solid 1px ${
-  state.error ? colors.constantes.error : colors.constantes.bordes
-};
+      border: solid 1px ${state.error ? colors.constantes.error : colors.constantes.bordes};
 
       &:placeholder {
         color: ${colors.constantes.texto.auxiliar};
       }
 
       &:focus {
-        border: solid 1px ${
-  state.error ? colors.constantes.error : colors.default.primario.base
-};
+        border: solid 1px ${state.error ? colors.constantes.error : colors.default.primario.base};
       }
 
       &:disabled {
@@ -61,7 +62,7 @@ export default class Input extends Component {
         border: solid 1px ${colors.constantes.bordes};
         opacity: 0.5;
       }
-    `
+    `;
 
     return (
       <React.Fragment>
@@ -70,6 +71,7 @@ export default class Input extends Component {
         </label>
         <input
           css={stylesInput}
+          onChange={this.handleChange}
           type={props.type}
           disabled={props.disabled}
           placeholder={props.placeholder}
@@ -78,7 +80,7 @@ export default class Input extends Component {
           readonly={props.readonly}
         />
       </React.Fragment>
-    )
+    );
   }
 }
 
@@ -115,7 +117,7 @@ Input.propTypes = {
    * Url: Permite validar una URL.
    * Week: Selector de fecha por semana.
    */
-  type: PropTypes.oneOf([
+  type: PropTypes.oneOf ([
     'checkbox',
     'color',
     'date',
@@ -135,7 +137,7 @@ Input.propTypes = {
     'text',
     'time',
     'url',
-    'week'
+    'week',
   ]),
   /**
    * Indica si el input tendrá un formato de error.
@@ -157,18 +159,18 @@ Input.propTypes = {
    * Ingresa un patrón regex (Regular expressions) para validar y restringir los valores introducidos según un patrón.
    * Es útil si sólo se permite ingresar cierta cantidad de caracteres, ciertos caracteres o cierta combinación de caracteres.
    */
-  pattern: PropTypes.string,
+  regex: PropTypes.object,
   /**
    * Le indica al navegador que se permitirá el autocompletado de información.
    */
   autoComplete: PropTypes.bool,
   width: PropTypes.number,
-  height: PropTypes.number
-}
+  height: PropTypes.number,
+};
 
 Input.defaultProps = {
   label: 'Etiqueta:',
   type: 'text',
   disabled: false,
-  placeholder: 'Placeholder'
-}
+  placeholder: 'Placeholder',
+};
