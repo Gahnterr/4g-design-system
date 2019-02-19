@@ -2,7 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import colors from '../styles/colors.json';
 import typography from '../styles/typography.json';
-import '../styles/font.css';
+import '../styles/styles.css';
 
 const styles = (size, disabled) => `
     display: flex;

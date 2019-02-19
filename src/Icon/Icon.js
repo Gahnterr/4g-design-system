@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Icon = () => {
-  return <i spin name="spinner" />;
+  return <i className="fa fa-spinner" />;
 };
 
 Icon.propTypes = {

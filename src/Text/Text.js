@@ -2,7 +2,7 @@ import React from 'react';
 import {PropTypes} from 'prop-types';
 import typography from '../styles/typography.json';
 import colors from '../styles/colors.json';
-import '../styles/font.css';
+import '../styles/styles.css';
 
 const Text = props => {
   const styles = `

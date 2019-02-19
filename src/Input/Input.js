@@ -1,77 +1,51 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import typography from '../styles/typography.json';
 import colors from '../styles/colors.json';
-import '../styles/font.css';
+import '../styles/styles.css';
 
 export default class Input extends Component {
   state = {
-    value: this.props.value,
+    value: '',
     error: this.props.error,
-  };
-
-  testRegex = () => {
-    const regex = this.props.regex;
-    const str = this.state.value;
-    regex.test (str)
-      ? this.setState ({error: false})
-      : this.setState ({error: true});
   };
 
   handleChange = e => {
     this.setState ({value: e.target.value});
-    this.testRegex ();
   };
 
-  render () {
-    const props = this.props;
-    const state = this.state;
-
+  styling (props, state) {
     const stylesLabel = `
-      display: block;
-      width: auto;
-      margin-bottom: 8px;
-      margin-right: 8px;
-      font-family: ${typography.fontFamily};
-      color: ${colors.constantes.texto.regular};
-      font-size: ${typography.size.m};
       opacity: ${props.disabled ? '0.5' : '1'};
     `;
 
     const stylesInput = `
-      display: block;
-      width: 100%;
-      height: 30px;
-      padding-left: 10px;
-      padding-right: 10px;
-      font-family: ${typography.fontFamily};
-      font-size: ${typography.size.m};
-      color: ${colors.constantes.texto.regular};
       border: solid 1px ${state.error ? colors.constantes.error : colors.constantes.bordes};
-
-      &:placeholder {
-        color: ${colors.constantes.texto.auxiliar};
-      }
 
       &:focus {
         border: solid 1px ${state.error ? colors.constantes.error : colors.default.primario.base};
       }
-
-      &:disabled {
-        background: ${colors.white};
-        border: solid 1px ${colors.constantes.bordes};
-        opacity: 0.5;
-      }
     `;
+    return {stylesLabel, stylesInput};
+  }
+
+  render () {
+    const props = this.props;
+    const state = this.state;
+    const {stylesLabel, stylesInput} = this.styling (props, state);
 
     return (
       <React.Fragment>
-        <label css={stylesLabel} for={props.for}>
-          {props.label}
-        </label>
+        {props.label
+          ? <label css={stylesLabel} for={props.for}>
+              {props.label}
+            </label>
+          : null}
         <input
           css={stylesInput}
-          onChange={this.handleChange}
+          onChange={props.onChange}
+          onClick={props.onClick}
+          onFocus={props.onFocus}
+          onBlur={props.onBlur}
           type={props.type}
           disabled={props.disabled}
           placeholder={props.placeholder}
@@ -89,10 +63,6 @@ Input.propTypes = {
    * Define el texto de la etiqueta que acompaña al input.
    */
   label: PropTypes.string,
-  /**
-   * Define el texto dentro del input en sí.
-   */
-  value: PropTypes.string,
   /**
    * Elige el tipo de input que quieres.
    *
@@ -139,6 +109,10 @@ Input.propTypes = {
     'url',
     'week',
   ]),
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
   /**
    * Indica si el input tendrá un formato de error.
    */

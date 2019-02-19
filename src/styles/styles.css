@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700');
+
+/* Variables de colores y otros valores repetidos frecuentemente */
+:root {
+  /* Colores básicos */
+  --white: #fff;
+  --black: #000;
+
+  /* Variables Tenant (Tema predeterminado) */
+  --primario-base: #1976d2;
+  --primario-light: #63a4ff;
+  --primario-dark: #004ba0;
+  --secundario-base: #00a99e;
+  --secundario-light: #10dbcf;
+  --secundario-dark: #03807d;
+  --seleccion: #e3f2fd;
+
+  /* Constantes Tenant */
+  --otros-fondos: #ffffff;
+  --fondo-de-app: #f5f5f5;
+  --fondo-de-secciones: #e0e0e0;
+  --texto-regular: #6b6b6b;
+  --texto-auxiliar: #9e9e9e;
+  --fila-de-grid: #f2f2f2;
+  --bordes: #c8c8c8;
+  --error: #ef5350;
+  --exito: #17e57e;
+  --advertencia: #ffd54f;
+
+  /* Texto */
+  --roboto: 'Roboto', 'Arial', sans-serif;
+}
+
+/* Estilos de texto */
+.texto-regular {
+  color: var(--texto-regular);
+  font-family: var(--roboto);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.texto-auxiliar {
+  color: var(--texto-auxiliar);
+  font-family: var(--roboto);
+}
+
+/* Etiquetas */
+label {
+  display: block;
+  width: auto;
+  margin-bottom: 8px;
+  margin-right: 8px;
+
+  color: var(--texto-regular);
+  font-family: var(--roboto);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Inputs */
+input {
+  display: block;
+  width: 100%;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: var(--roboto);
+  font-size: 14px;
+  color: var(--texto-regular);
+  border: solid 1px var(--bordes);
+}
+
+input::placeholder {
+  color: var(--texto-auxiliar);
+}
+
+input:focus {
+  border: solid 1px var(--primario-base);
+}
+
+input:disabled {
+  background: var(--white);
+  border: solid 1px var(--bordes);
+  opacity: 0.5;
+}
+
+/* Textareas */
+textarea {
+  resize: none;
+  width: 100%;
+  padding: 10px;
+  border: solid 1px var(--bordes);
+}
+
+textarea::placeholder {
+  color: var(--texto-auxiliar);
+}
+
+textarea:focus {
+  border: solid 1px var(--primario-base);
+}
+
+textarea:disabled {
+  background: var(--white);
+  border: solid 1px var(--bordes);
+  opacity: 0.5;
+}
