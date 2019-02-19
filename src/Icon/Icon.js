@@ -53,6 +53,7 @@ Icon.propTypes = {
     'advertencia',
     'exito',
   ]),
+  fixedWidth: PropTypes.bool,
   spin: PropTypes.bool,
   pulse: PropTypes.bool,
 };
