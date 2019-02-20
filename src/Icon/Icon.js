@@ -24,6 +24,9 @@ const Icon = props => {
     case 'advertencia':
       iconColor = 'var(--advertencia)';
       break;
+    case 'blanco':
+      iconColor = 'var(--white)';
+      break;
     case 'exito':
       iconColor = 'var(--exito)';
       break;
@@ -52,6 +55,7 @@ Icon.propTypes = {
     'error',
     'advertencia',
     'exito',
+    'blanco',
   ]),
   fixedWidth: PropTypes.bool,
   spin: PropTypes.bool,

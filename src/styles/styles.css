@@ -44,8 +44,45 @@
   font-family: var(--roboto);
 }
 
+/* Botones */
+.button {
+  display: flex;
+  min-width: 150px;
+  width: auto;
+  max-width: 250px;
+  height: 40px;
+  justify-content: center;
+  border-radius: 5px;
+  border: none;
+  font-family: var(--roboto);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  cursor: default;
+  transition: all ease-in 350ms;
+}
+
+.button:hover {
+  transition: all ease-out 100ms;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  transition: all linear 250ms;
+}
+
+.button i {
+  display: flex;
+  align-self: center;
+  margin-right: 8px;
+}
+
 /* Etiquetas */
-label {
+.label {
   display: block;
   width: auto;
   margin-bottom: 8px;
@@ -58,7 +95,7 @@ label {
 }
 
 /* Inputs */
-input {
+.input {
   display: block;
   width: 100%;
   height: 30px;
@@ -70,37 +107,37 @@ input {
   border: solid 1px var(--bordes);
 }
 
-input::placeholder {
+.input::placeholder {
   color: var(--texto-auxiliar);
 }
 
-input:focus {
+.input:focus {
   border: solid 1px var(--primario-base);
 }
 
-input:disabled {
+.input:disabled {
   background: var(--white);
   border: solid 1px var(--bordes);
   opacity: 0.5;
 }
 
 /* Textareas */
-textarea {
+.textarea {
   resize: none;
   width: 100%;
   padding: 10px;
   border: solid 1px var(--bordes);
 }
 
-textarea::placeholder {
+.textarea::placeholder {
   color: var(--texto-auxiliar);
 }
 
-textarea:focus {
+.textarea:focus {
   border: solid 1px var(--primario-base);
 }
 
-textarea:disabled {
+.textarea:disabled {
   background: var(--white);
   border: solid 1px var(--bordes);
   opacity: 0.5;

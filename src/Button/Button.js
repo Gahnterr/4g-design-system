@@ -1,36 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import Icon from '../Icon/Icon.js';
 import colors from '../styles/colors.json';
-import typography from '../styles/typography.json';
-import '../styles/styles.css';
-
-const stylesCommon = `
-  display: flex;
-  min-width: 150px;
-  width: auto;
-  max-width: 250px;
-  height: 40px;
-  justify-content: center;
-  border-radius: 5px;
-  border: none;
-  font-family: ${typography.fontFamily};
-  font-size: ${typography.size.m}px;
-  font-weight: ${typography.weight.medium};
-  padding: 0 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
-  cursor: default;
-  transition: all ease-in 350ms;
-  &:hover {
-    transition: all ease-out 100ms;
-  }
-  &:disabled {
-    opacity: 0.5;
-    transition: all linear 250ms;
-  }
-`;
 
 const stylesPrimario = `
   color: ${colors.white};
@@ -61,17 +32,32 @@ const stylesSecundario = `
 `;
 
 const styles = type => {
-  return (
-    stylesCommon +
-    (type === 'primario'
-      ? stylesPrimario
-      : type === 'secundario' ? stylesSecundario : null)
-  );
+  return type === 'primario'
+    ? stylesPrimario
+    : type === 'secundario' ? stylesSecundario : null;
 };
 
 const Button = props => {
   return (
-    <button type="button" css={styles (props.type)} {...props}>
+    <button
+      className="button"
+      type="button"
+      css={styles (props.type)}
+      {...props}
+    >
+      {props.icon
+        ? <Icon
+            icon={props.icon}
+            size={props.iconSize}
+            spin={props.iconSpin}
+            pulse={props.iconPulse}
+            color={
+              props.type === 'primario'
+                ? 'blanco'
+                : props.type === 'secundario' ? 'secundario' : null
+            }
+          />
+        : null}
       {props.children}
     </button>
   );
@@ -92,6 +78,10 @@ Button.propTypes = {
    * Interacción al hacer clic en el botón.
    */
   onClick: PropTypes.func,
+  icon: PropTypes.string,
+  iconSize: PropTypes.oneOf (['lg', '2x', '3x', '4x', '5x']),
+  iconSpin: PropTypes.bool,
+  iconPulse: PropTypes.bool,
   /**
    * Indica si el botón se encuentra deshabilitado o no. Si está deshabilitado, no funcionarán sus 
    */

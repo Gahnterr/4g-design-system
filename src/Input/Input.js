@@ -36,12 +36,13 @@ export default class Input extends Component {
     return (
       <React.Fragment>
         {props.label
-          ? <label css={stylesLabel} for={props.for}>
+          ? <label className="label" css={stylesLabel} for={props.for}>
               {props.label}
             </label>
           : null}
         <input
           css={stylesInput}
+          className="input"
           onChange={props.onChange}
           onClick={props.onClick}
           onFocus={props.onFocus}

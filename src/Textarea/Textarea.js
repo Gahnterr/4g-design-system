@@ -12,10 +12,10 @@ export default class Textarea extends React.Component {
     `;
 
     const stylesTextarea = `
-    border: solid 1px ${state.error ? colors.constantes.error : colors.constantes.bordes};
+      border: solid 1px ${state.error ? colors.constantes.error : null};
 
       &:focus {
-        border: solid 1px ${state.error ? colors.constantes.error : colors.constantes.bordes};
+        border: solid 1px ${state.error ? colors.constantes.error : null};
       }
     `;
 
@@ -30,13 +30,13 @@ export default class Textarea extends React.Component {
     return (
       <React.Fragment>
         {props.label
-          ? <label css={stylesLabel} className="texto-regular">
+          ? <label css={stylesLabel} className="label texto-regular">
               {props.label}
             </label>
           : null}
         <textarea
           css={stylesTextarea}
-          className="texto-regular"
+          className="textarea texto-regular"
           onClick={props.onClick}
           onChange={props.onChange}
           onFocus={props.onFocus}
