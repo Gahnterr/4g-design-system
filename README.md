@@ -16,6 +16,8 @@ Para poder ejecutar el ambiente de prueba, se necesita instalar ciertas herramie
 - Visual Studio Code (editor de código recomendado https://code.visualstudio.com/)
 - Una cuenta en UXPin Merge (crea una nueva cuenta con free trial en https://app.merge.uxpin.cloud)
 
+> Nota: Si usas WSL Bash con Ubuntu, tendrás que abrir Ubuntu (una vez instalado) e instalar por medio de la terminal NodeJS y NPM. De otra forma, no funcionará UXPin Merge, porque estás ejecutándolo desde el subsistema Linux en lugar de Windows. Sigue las instrucciones de instalación como si fuera Linux en las páginas de descarga.
+
 ### Instrucciones
 1.  Instala WSL y descarga Ubuntu según las instrucciones en la página de Microsoft. Esta es una medida necesaria temporal, ya que UXPin Merge no funciona con Windows pero sí con Linux y macOS. Una vez se actualice UXPin Merge para que funcione con Windows, ya no será necesario hacer este paso.
 2.  Instala Visual Studio Code y configura el "Default Shell" para "wsl". Para hacer esto:
@@ -26,10 +28,10 @@ Para poder ejecutar el ambiente de prueba, se necesita instalar ciertas herramie
 4.  Localiza la ubicación del folder del repositorio.
 5.  En Visual Studio Code, abre el folder del repositorio. Para hacer esto, ve a "File" > "Open Folder" y selecciona la carpeta "4g-design-system".
 6.  Antes de comenzar a utilizar la terminal para instalar las dependencias necesarias del repositorio, asegúrate que hayas instalado NPM y NodeJS dentro del subsistema de Ubuntu en una terminal WSL. Para hacer eso, abre Ubuntu (una vez lo hayas instalado, cuando lo abras por primera vez, 
-6.  Abre una terminal dentro de Visual Studio Code y escribe `npm install` y espera a que termine de instalar todas las dependencias necesarias.
-7.  Ahora, dirígete a https://app.merge.uxpin.cloud y crea una nueva cuenta (comienza un "Free trial"). Asegúrate que estés iniciado sesión en esa ruta, será necesario para poder entrar al editor de Merge en modo experimental.
-8.  Una vez termine de instalarse las dependencias y te hayas asegurado de iniciar sesión, en la terminal, escribe `npm start` para comenzar a ejecutar el ambiente de prueba.
-9.  Cuando temrine de ejecutarse exitosamente, verás un mensaje de bienvenida en la terminal y se abrirá una nueva pestaña en tu navegador, en donde se cargarán todos los componentes y podrás experimentar con ellos. Este es un ambiente de prueba separado de UXPin real.
+7.  Abre una terminal dentro de Visual Studio Code y escribe `npm install` y espera a que termine de instalar todas las dependencias necesarias.
+8.  Ahora, dirígete a https://app.merge.uxpin.cloud y crea una nueva cuenta (comienza un "Free trial"). Asegúrate que estés iniciado sesión en esa ruta, será necesario para poder entrar al editor de Merge en modo experimental.
+9.  Una vez termine de instalarse las dependencias y te hayas asegurado de iniciar sesión, en la terminal, escribe `npm start` para comenzar a ejecutar el ambiente de prueba.
+10.  Cuando temrine de ejecutarse exitosamente, verás un mensaje de bienvenida en la terminal y se abrirá una nueva pestaña en tu navegador, en donde se cargarán todos los componentes y podrás experimentar con ellos. Este es un ambiente de prueba separado de UXPin real.
 
 ## Cómo modificar componentes existentes
 
