@@ -1,5 +1,21 @@
 {
   "white": "#fff",
+  "constantes": {
+    "fondo": {
+      "general": "#F5F5F5",
+      "otros": "#FFF",
+      "selecciones": "#E0E0E0"
+    },
+    "texto": {
+      "regular": "#6B6B6B",
+      "auxiliar": "#9E9E9E"
+    },
+    "row": "#F2F2F2",
+    "bordes": "#C8C8C8",
+    "error": "#EF5350",
+    "exito": "#17E57E",
+    "advertencia": "#FFD54F"
+  },
   "default": {
     "primario": {
       "light": "#63A4FF",
