@@ -77,11 +77,9 @@
   display: flex;
   align-self: center;
   margin-right: 8px;
-  transition: var(--anim-out);
 }
 
-.btn:hover,
-.btn:hover .btn__icono {
+.btn:hover {
   transition: var(--anim-in);
 }
 
@@ -212,11 +210,46 @@
   border-radius: 50%;
   background-color: var(--secundario-base);
   box-shadow: none;
-  font-size: 16px;
 }
 
 .btn__icono--regresar {
-  font-size: 16px;
+  font-size: 14px;
+}
+
+.btn--regresar:hover {
+  background-color: var(--secundario-light);
+}
+
+.btn--regresar:active {
+  background-color: var(--secundario-dark);
+}
+
+/* Botón de proceso */
+.btn--proceso {
+  min-width: 100px;
+  max-width: 200px;
+  width: auto;
+  height: 35px;
+  color: var(--secundario-base);
+  font-weight: 400;
+  border-radius: unset;
+  box-shadow: none;
+  background-color: var(--no-fill);
+}
+
+.btn--proceso:hover {
+  background-color: var(--secundario-base);
+  color: var(--white);
+}
+
+.btn--proceso:active {
+  background-color: var(--secundario-dark);
+  color: var(--white);
+}
+
+.btn--proceso:disabled {
+  opacity: 1;
+  color: var(--texto-auxiliar);
 }
 
 /* Etiquetas */

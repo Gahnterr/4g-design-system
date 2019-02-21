@@ -24,7 +24,11 @@ module.exports = {
       },
       {
         name: 'Componentes avanzados',
-        include: ['src/Modal/Modal.js'],
+        include: [
+          'src/Header/Header.js',
+          'src/ProcessBar/ProcessBar.js',
+          'src/Modal/Modal.js',
+        ],
       },
     ],
   },
