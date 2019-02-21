@@ -30,6 +30,11 @@
 
   /* Texto */
   --roboto: 'Roboto', 'Arial', sans-serif;
+
+  /* Easings */
+  --anim-out: all ease-in 250ms;
+  --anim-in: all linear 50ms;
+  --anim-linear: all linear 100ms;
 }
 
 /* Estilos de texto */
@@ -53,6 +58,7 @@
   max-width: 250px;
   height: 40px;
   justify-content: center;
+  align-items: center;
   border-radius: 5px;
   border: none;
   font-family: var(--roboto);
@@ -64,25 +70,25 @@
   text-overflow: ellipsis;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
   cursor: default;
-  transition: all ease-in 350ms;
+  transition: var(--anim-out);
 }
 
 .btn__icono {
   display: flex;
   align-self: center;
   margin-right: 8px;
-  transition: all ease-in 350ms;
+  transition: var(--anim-out);
 }
 
 .btn:hover,
-.btn__icono:hover {
-  transition: all ease-out 100ms;
+.btn:hover .btn__icono {
+  transition: var(--anim-in);
 }
 
-.btn:disabled,
-.btn__icono:disabled {
+.btn:disabled {
   opacity: 0.5;
-  transition: all linear 250ms;
+  transition: var(--anim-linear);
+  pointer-events: none;
 }
 
 /* Botón primario */
@@ -103,10 +109,6 @@
   background-color: var(--primario-base);
 }
 
-.btn__icono--primario {
-  color: var(--white);
-}
-
 /* Botón secundario */
 .btn--secundario {
   color: var(--primario-base);
@@ -114,17 +116,9 @@
   border: solid 1px var(--primario-base);
 }
 
-.btn__icono--secundario {
-  color: var(--primario-base);
-}
-
 .btn--secundario:hover {
   color: var(--primario-light);
   border-color: var(--primario-light);
-}
-
-.btn__icono--secundario:hover {
-  color: var(--primario-light);
 }
 
 .btn--secundario:active {
@@ -132,17 +126,48 @@
   border-color: var(--primario-dark);
 }
 
-.btn__icono--secundario:active {
-  color: var(--primario-dark);
-}
-
-/* Botón con ícono */
+/* Botón terciario */
 .btn--terciario {
   background-color: var(--no-fill);
-  border-radius: none;
+  border-radius: unset;
   padding: 10px;
   height: 50px;
   width: auto;
+  min-width: unset;
+  max-width: unset;
+  font-weight: 400;
+  box-shadow: none;
+  color: var(--texto-regular);
+  cursor: pointer;
+}
+
+.btn__icono--terciario {
+  color: var(--texto-auxiliar);
+  margin: -10px -2px -10px -10px;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn--terciario:hover .btn__icono--terciario {
+  color: var(--primario-base);
+}
+
+.btn--terciario:active .btn__icono--terciario {
+  color: var(--primario-dark);
+}
+
+/* Botón terciario destructivo */
+.btn--destructivo:hover,
+.btn--destructivo:active {
+  color: var(--error);
+}
+
+.btn--destructivo .btn__icono--destructivo,
+.btn--destructivo:hover .btn__icono--destructivo,
+.btn--destructivo:active .btn__icono--destructivo {
+  color: var(--error);
 }
 
 /* Botón de tipo link */
@@ -176,6 +201,22 @@
   opacity: 0;
   cursor: default;
   pointer-events: none;
+}
+
+/* Botón de regresar */
+.btn--regresar {
+  min-width: unset;
+  max-width: unset;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--secundario-base);
+  box-shadow: none;
+  font-size: 16px;
+}
+
+.btn__icono--regresar {
+  font-size: 16px;
 }
 
 /* Etiquetas */

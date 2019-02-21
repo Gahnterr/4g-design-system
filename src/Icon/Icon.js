@@ -8,7 +8,7 @@ const Icon = props => {
     const c = props.color;
     let r = 'color: ';
 
-    if (c === 'none' || props.className) {
+    if (c === 'none') {
       r = ''; // Si prop.color tiene valor "none", no regresará ningún color al CSS, permitiendo cambiar el color por medio de prop.className o el atributo style.
     } else if (c === 'texto-regular') {
       r += 'var(--texto-regular)';
@@ -33,7 +33,7 @@ const Icon = props => {
 
   return (
     <i
-      className={`fa fa-${props.icon} fa-${props.size} ${props.rotate !== 'normal' ? 'fa-rotate-' + props.rotate : ''} ${props.flip !== 'normal' ? 'fa-flip-' + props.flip : ''} ${props.spin ? 'fa-spin' : ''} ${props.spin && props.pulse ? 'fa-pulse' : ''} ${props.className}`}
+      className={`fa fa-${props.icon} fa-${props.size}${props.rotate !== 'normal' ? ' fa-rotate-' + props.rotate : ''}${props.flip !== 'normal' ? ' fa-flip-' + props.flip : ''} ${props.spin ? ' fa-spin' : ''}${props.spin && props.pulse ? ' fa-pulse' : ''} ${props.className}`}
       css={getIconColor ()}
     />
   );
