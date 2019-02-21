@@ -1,32 +1,13 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import colors from '../styles/colors.json';
-import typography from '../styles/typography.json';
 import '../styles/styles.css';
-
-const styles = (size, disabled) => `
-    font-family: ${typography.fontFamily};
-    font-size: ${size === 'regular' ? typography.size.l : size === 'compacto' ? typography.size.m : null}px;
-    font-weight: ${typography.weight.regular};
-    white-space: nowrap;
-    color: ${colors.default.secundario.base};
-    opacity: ${disabled ? 0.5 : 1.0};
-    text-decoration: underline;
-    pointer-events: ${disabled ? 'none' : 'default'};
-    cursor: ${disabled ? 'default' : 'pointer'};
-
-    &:hover {
-        color: ${colors.default.secundario.light};
-    }
-
-    &:active {
-        color: ${colors.default.secundario.dark};
-    }
-`;
 
 const Link = props => {
   return (
-    <a className="link" css={styles (props.size, props.disabled)} {...props}>
+    <a
+      className={`ds-link ds-link--${props.size} ${props.disabled ? 'ds-link--disabled' : null}`}
+      {...props}
+    >
       {props.children}
     </a>
   );
@@ -50,6 +31,7 @@ Link.propTypes = {
    * Define el tamaño del texto del link.
    */
   size: PropTypes.oneOf (['compacto', 'regular']),
+  /** Al activarse, se deshabilita el link. */
   disabled: PropTypes.bool,
 };
 

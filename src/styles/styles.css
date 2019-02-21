@@ -5,6 +5,7 @@
   /* Colores básicos */
   --white: #fff;
   --black: #000;
+  --no-fill: #ffffff00;
 
   /* Variables Tenant (Tema predeterminado) */
   --primario-base: #1976d2;
@@ -45,7 +46,7 @@
 }
 
 /* Botones */
-.button {
+.btn {
   display: flex;
   min-width: 150px;
   width: auto;
@@ -66,19 +67,115 @@
   transition: all ease-in 350ms;
 }
 
-.button:hover {
+.btn__icono {
+  display: flex;
+  align-self: center;
+  margin-right: 8px;
+  transition: all ease-in 350ms;
+}
+
+.btn:hover,
+.btn__icono:hover {
   transition: all ease-out 100ms;
 }
 
-.button:disabled {
+.btn:disabled,
+.btn__icono:disabled {
   opacity: 0.5;
   transition: all linear 250ms;
 }
 
-.button i {
-  display: flex;
-  align-self: center;
-  margin-right: 8px;
+/* Botón primario */
+.btn--primario {
+  color: var(--white);
+  background-color: var(--primario-base);
+}
+
+.btn--primario:hover {
+  background-color: var(--primario-light);
+}
+
+.btn--primario:active {
+  background-color: var(--primario-dark);
+}
+
+.btn--primario:disabled {
+  background-color: var(--primario-base);
+}
+
+.btn__icono--primario {
+  color: var(--white);
+}
+
+/* Botón secundario */
+.btn--secundario {
+  color: var(--primario-base);
+  background-color: var(--white);
+  border: solid 1px var(--primario-base);
+}
+
+.btn__icono--secundario {
+  color: var(--primario-base);
+}
+
+.btn--secundario:hover {
+  color: var(--primario-light);
+  border-color: var(--primario-light);
+}
+
+.btn__icono--secundario:hover {
+  color: var(--primario-light);
+}
+
+.btn--secundario:active {
+  color: var(--primario-dark);
+  border-color: var(--primario-dark);
+}
+
+.btn__icono--secundario:active {
+  color: var(--primario-dark);
+}
+
+/* Botón con ícono */
+.btn--terciario {
+  background-color: var(--no-fill);
+  border-radius: none;
+  padding: 10px;
+  height: 50px;
+  width: auto;
+}
+
+/* Botón de tipo link */
+.ds-link {
+  font-family: var(--roboto);
+  font-weight: 400;
+  white-space: nowrap;
+  color: var(--secundario-base);
+  text-decoration: underline;
+  pointer-events: default;
+  cursor: pointer;
+}
+
+.ds-link--compacto {
+  font-size: 14px;
+}
+
+.ds-link--regular {
+  font-size: 16px;
+}
+
+.ds-link:hover {
+  color: var(--secundario-light);
+}
+
+.ds-link:active {
+  color: var(--secundario-dark);
+}
+
+.ds-link--disabled {
+  opacity: 0;
+  cursor: default;
+  pointer-events: none;
 }
 
 /* Etiquetas */

@@ -4,42 +4,37 @@ import 'font-awesome/css/font-awesome.min.css';
 import '../styles/styles.css';
 
 const Icon = props => {
-  let iconColor;
-  switch (props.color) {
-    case 'texto-regular':
-      iconColor = 'var(--texto-regular)';
-      break;
-    case 'texto-auxiliar':
-      iconColor = 'var(--texto-auxiliar';
-      break;
-    case 'primario':
-      iconColor = 'var(--primario-base)';
-      break;
-    case 'secundario':
-      iconColor = 'var(--secundario-base)';
-      break;
-    case 'error':
-      iconColor = 'var(--error)';
-      break;
-    case 'advertencia':
-      iconColor = 'var(--advertencia)';
-      break;
-    case 'blanco':
-      iconColor = 'var(--white)';
-      break;
-    case 'exito':
-      iconColor = 'var(--exito)';
-      break;
-    default:
-      iconColor = 'var(--texto-regular)';
-  }
+  const getIconColor = () => {
+    const c = props.color;
+    let r = 'color: ';
 
-  const stylesIcon = `color: ${iconColor}`;
+    if (c === 'none' || props.className) {
+      r = ''; // Si prop.color tiene valor "none", no regresará ningún color al CSS, permitiendo cambiar el color por medio de prop.className o el atributo style.
+    } else if (c === 'texto-regular') {
+      r += 'var(--texto-regular)';
+    } else if (c === 'texto-auxiliar') {
+      r += 'var(--texto-auxiliar)';
+    } else if (c === 'primario') {
+      r += 'var(--primario-base)';
+    } else if (c === 'secundario') {
+      r += 'var(--secundario-base)';
+    } else if (c === 'error') {
+      r += 'var(--error)';
+    } else if (c === 'advertencia') {
+      r += 'var(--advertencia)';
+    } else if (c === 'blanco') {
+      r += 'var(--white)';
+    } else if (c === 'exito') {
+      r += 'var(--exito)';
+    }
+
+    return r;
+  };
 
   return (
     <i
-      className={`fa fa-${props.icon} fa-${props.size} ${props.spin ? 'fa-spin' : null} ${props.spin && props.pulse ? 'fa-pulse' : null}`}
-      css={stylesIcon}
+      className={`fa fa-${props.icon} fa-${props.size} ${props.rotate !== 'normal' ? 'fa-rotate-' + props.rotate : ''} ${props.flip !== 'normal' ? 'fa-flip-' + props.flip : ''} ${props.spin ? 'fa-spin' : ''} ${props.spin && props.pulse ? 'fa-pulse' : ''} ${props.className}`}
+      css={getIconColor ()}
     />
   );
 };
@@ -56,10 +51,22 @@ Icon.propTypes = {
     'advertencia',
     'exito',
     'blanco',
+    'none',
   ]),
   fixedWidth: PropTypes.bool,
+  rotate: PropTypes.oneOf (['normal', '90', '180', '270']),
+  flip: PropTypes.oneOf (['normal', 'horizontal', 'vertical']),
   spin: PropTypes.bool,
   pulse: PropTypes.bool,
+  className: PropTypes.string,
+};
+
+Icon.defaultProps = {
+  icon: 'fa',
+  size: 'lg',
+  color: 'texto-regular',
+  rotate: 'normal',
+  flip: 'normal',
 };
 
 export {Icon as default};
