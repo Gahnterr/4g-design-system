@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import colors from '../styles/colors.json';
-import '../styles/styles.css';
 
 export default class Input extends Component {
   state = {

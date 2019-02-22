@@ -19,13 +19,13 @@
     "recompose": "^0.30.0",
     "style-loader": "^0.23.1",
     "styled-components": "^4.1.3",
-    "url-loader": "^1.1.2",
     "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "uxpin-merge --webpack-config ./webpack.config.js --wrapper ./src/UXPinWrapper/UXPinWrapper.js --uxpin-domain merge.uxpin.cloud",
     "server": "uxpin-merge server --webpack-config ./webpack.uxpin.config.js --wrapper ./src/UXPinWrapper/UXPinWrapper.js",
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack"
   },
   "type": "git",
   "url": "git+https://github.com/Gahnterr/4g-design-system",
@@ -53,6 +53,7 @@
     "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",
     "svg-react-loader": "^0.4.6",
+    "url-loader": "^1.1.2",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.1.2"
   }

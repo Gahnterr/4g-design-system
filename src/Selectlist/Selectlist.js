@@ -42,45 +42,9 @@ export default class Selectlist extends React.Component {
           />
         </div>
         {state.focus
-          ? <div className="dropdown">
-              <ul className="dropdown__list">
-                <li
-                  className="dropdown__list__item"
-                  id="0"
-                  onClick={this.handleClick}
-                >
-                  Test
-                </li>
-                <li
-                  className="dropdown__list__item"
-                  id="1"
-                  onClick={this.handleClick}
-                >
-                  Segunda opción
-                </li>
-                <li
-                  className="dropdown__list__item"
-                  id="2"
-                  onClick={this.handleClick}
-                >
-                  Otra opción
-                </li>
-                <li
-                  className="dropdown__list__item"
-                  id="3"
-                  onClick={this.handleClick}
-                >
-                  México
-                </li>
-                <li
-                  className="dropdown__list__item"
-                  id="4"
-                  onClick={this.handleClick}
-                >
-                  No México
-                </li>
-              </ul>
-            </div>
+          ? <select className="selectlist">
+              <option className="selectlist__option" />
+            </select>
           : null}
       </React.Fragment>
     );
