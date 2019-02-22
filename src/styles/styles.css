@@ -313,3 +313,35 @@
   border: solid 1px var(--bordes);
   opacity: 0.5;
 }
+
+/* Select list */
+.selectlist {
+  display: flex;
+  width: 100%;
+  height: 30px;
+  border: solid 1px var(--bordes);
+}
+
+.selectlist__input {
+  box-sizing: border-box;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+  font-family: var(--roboto);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--texto-regular);
+  background-color: var(--no-fill);
+  border: none;
+}
+
+.selectlist__icono {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
