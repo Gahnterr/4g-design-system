@@ -4,10 +4,12 @@ import {PropTypes} from 'prop-types';
 
 export default class Selectlist extends React.Component {
   state = {
-    selected: '',
+    value: '',
     focus: false,
     options: this.props.options,
   };
+
+  selectlistInput = React.createRef ();
 
   handleFocus = () => {
     this.setState ({focus: true});
@@ -17,7 +19,13 @@ export default class Selectlist extends React.Component {
     this.setState ({focus: false});
   };
 
-  handleClick = () => {};
+  handleClick = () => {
+    this.selectlistInput.current.focus ();
+  };
+
+  handleItemSelect = e => {
+    this.setState ({value: e.target.value});
+  };
 
   render () {
     const state = this.state;
@@ -33,18 +41,25 @@ export default class Selectlist extends React.Component {
             placeholder="Seleccione una opción"
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
+            ref={this.selectlistInput}
+            value={state.value}
           />
           <Icon
             className="selectlist__icono"
             icon="caret-down"
             color="texto-regular"
-            onClick={state.focus ? this.handleBlur : this.handleFocus}
+            size={null}
+            onClick={this.handleClick}
           />
         </div>
         {state.focus
-          ? <select className="selectlist">
-              <option className="selectlist__option" />
-            </select>
+          ? <ul className="dropdown default-scrollbar">
+              {state.options.map (option => (
+                <li className="dropdown__item" onClick={this.handleItemSelect}>
+                  {option}
+                </li>
+              ))}
+            </ul>
           : null}
       </React.Fragment>
     );

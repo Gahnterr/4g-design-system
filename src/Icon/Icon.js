@@ -33,6 +33,7 @@ const Icon = props => {
     <i
       className={`fa fa-${props.icon} fa-${props.size}${props.rotate !== 'normal' ? ' fa-rotate-' + props.rotate : ''}${props.flip !== 'normal' ? ' fa-flip-' + props.flip : ''} ${props.spin ? ' fa-spin' : ''}${props.spin && props.pulse ? ' fa-pulse' : ''} ${props.className}`}
       css={getIconColor ()}
+      onClick={props.onClick}
     />
   );
 };
@@ -56,6 +57,7 @@ Icon.propTypes = {
   flip: PropTypes.oneOf (['normal', 'horizontal', 'vertical']),
   spin: PropTypes.bool,
   pulse: PropTypes.bool,
+  onClick: PropTypes.func,
   className: PropTypes.string,
 };
 
