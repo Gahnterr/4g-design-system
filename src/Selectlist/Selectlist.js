@@ -71,7 +71,7 @@ export default class Selectlist extends React.Component {
           {state.dropdownIsOpen
             ? <ul
                 className="dropdown default-scrollbar"
-                onClick={this.handleItemSelect}
+                onMouseUp={this.handleItemSelect}
               >
                 {state.options
                   ? state.options.map (option => (
