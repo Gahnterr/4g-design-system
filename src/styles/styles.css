@@ -253,7 +253,7 @@
 }
 
 /* Etiquetas */
-.label {
+.form-label {
   display: block;
   width: auto;
   margin-bottom: 8px;
@@ -357,6 +357,11 @@
 
 .dropdown {
   display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
   box-sizing: border-box;
   max-height: 300px;
   border: solid 1px var(--bordes);

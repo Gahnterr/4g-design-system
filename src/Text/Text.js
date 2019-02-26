@@ -2,11 +2,9 @@ import React from 'react';
 import {PropTypes} from 'prop-types';
 import typography from '../styles/typography.json';
 import colors from '../styles/colors.json';
-import '../styles/styles.css';
 
 const Text = props => {
   const styles = `
-    display: initial;
     font-family: ${typography.fontFamily};
     color: ${props.color};       
     font-size: ${typography.size.m}px;
@@ -20,7 +18,7 @@ const Text = props => {
     }
   `;
 
-  return <p css={styles}>{props.children}</p>;
+  return <p className={props.className} css={styles}>{props.children}</p>;
 };
 
 Text.propTypes = {
@@ -36,6 +34,7 @@ Text.propTypes = {
     'initial',
     'inherit',
   ]),
+  className: PropTypes.string,
 };
 
 Text.defaultProps = {

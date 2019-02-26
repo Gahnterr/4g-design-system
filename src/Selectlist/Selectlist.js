@@ -1,46 +1,63 @@
 import React from 'react';
 import Icon from '../Icon/Icon';
+import Label from '../Label/Label';
 import {PropTypes} from 'prop-types';
 
 export default class Selectlist extends React.Component {
   state = {
+    selected: '',
     value: '',
-    focus: false,
+    dropdownIsOpen: false,
     options: this.props.options,
   };
 
   selectlistInput = React.createRef ();
 
-  handleFocus = () => {
-    this.setState ({focus: true});
+  handleInputFocus = () => {
+    this.setState ({dropdownIsOpen: true});
   };
 
-  handleBlur = () => {
-    this.setState ({focus: false});
+  handleInputBlur = e => {
+    this.setState ({value: this.state.selected, dropdownIsOpen: false});
   };
 
-  handleClick = () => {
-    this.selectlistInput.current.focus ();
+  handleInputChange = e => {
+    this.setState ({value: e.target.value});
+  };
+
+  handleIconClick = () => {
+    if (this.state.dropdownIsOpen) {
+      this.setState ({value: this.state.selected, dropdownIsOpen: false});
+    } else {
+      this.setState ({dropdownIsOpen: true});
+    }
   };
 
   handleItemSelect = e => {
-    this.setState ({value: e.target.value});
+    this.setState ({
+      selected: e.target.innerText,
+      value: e.target.innerText,
+      dropdownIsOpen: false,
+    });
   };
 
   render () {
     const state = this.state;
+    const props = this.props;
 
     return (
       <React.Fragment>
+        {props.label ? <Label>{props.label}</Label> : null}
         <div
-          className={`selectlist${state.focus ? ' selectlist--focus' : ' selectlist--blur'}`}
+          className={`selectlist${state.dropdownIsOpen ? ' selectlist--focus' : ' selectlist--blur'}`}
         >
           <input
             className="selectlist__input"
             type="text"
             placeholder="Seleccione una opción"
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
+            onFocus={this.handleInputFocus}
+            onBlur={this.handleInputBlur}
+            onChange={this.handleInputChange}
             ref={this.selectlistInput}
             value={state.value}
           />
@@ -49,23 +66,32 @@ export default class Selectlist extends React.Component {
             icon="caret-down"
             color="texto-regular"
             size={null}
-            onClick={this.handleClick}
+            onClick={this.handleIconClick}
           />
+          {state.dropdownIsOpen
+            ? <ul
+                className="dropdown default-scrollbar"
+                onClick={this.handleItemSelect}
+              >
+                {state.options
+                  ? state.options.map (option => (
+                      <li className="dropdown__item">
+                        {option}
+                      </li>
+                    ))
+                  : <li className="dropdown__item" disabled>
+                      No existen registros...
+                    </li>}
+              </ul>
+            : null}
         </div>
-        {state.focus
-          ? <ul className="dropdown default-scrollbar">
-              {state.options.map (option => (
-                <li className="dropdown__item" onClick={this.handleItemSelect}>
-                  {option}
-                </li>
-              ))}
-            </ul>
-          : null}
       </React.Fragment>
     );
   }
 }
 
 Selectlist.propTypes = {
+  label: PropTypes.string,
   options: PropTypes.array,
+  selected: PropTypes.number,
 };
