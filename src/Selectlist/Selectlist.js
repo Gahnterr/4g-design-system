@@ -13,32 +13,35 @@ export default class Selectlist extends React.Component {
 
   selectlistInput = React.createRef ();
 
-  handleInputFocus = () => {
-    this.setState ({dropdownIsOpen: true});
-  };
-
-  handleInputBlur = e => {
-    this.setState ({value: this.state.selected, dropdownIsOpen: false});
-  };
-
-  handleInputChange = e => {
-    this.setState ({value: e.target.value});
-  };
-
-  handleIconClick = () => {
-    if (this.state.dropdownIsOpen) {
-      this.setState ({value: this.state.selected, dropdownIsOpen: false});
+  toggleDropdown = e => {
+    if (e.target.classList.value.includes ('dropdown__item')) {
+      this.selectItem (e.target.innerText);
     } else {
-      this.setState ({dropdownIsOpen: true});
+      this.state.dropdownIsOpen
+        ? this.closeDropdown (this.state.selected)
+        : this.openDropdown ();
     }
   };
 
-  handleItemSelect = e => {
+  openDropdown = () => {
+    this.setState ({dropdownIsOpen: true});
+    this.selectlistInput.current.focus ();
+  };
+
+  closeDropdown = selected => {
+    this.setState ({value: selected, dropdownIsOpen: false});
+    this.selectlistInput.current.blur ();
+  };
+
+  searchItem = e => {
+    this.setState ({value: e.target.value});
+  };
+
+  selectItem = targetInnerText => {
     this.setState ({
-      selected: e.target.innerText,
-      value: e.target.innerText,
-      dropdownIsOpen: false,
+      selected: targetInnerText,
     });
+    this.closeDropdown (targetInnerText);
   };
 
   render () {
@@ -50,32 +53,27 @@ export default class Selectlist extends React.Component {
         {props.label ? <Label>{props.label}</Label> : null}
         <div
           className={`selectlist${state.dropdownIsOpen ? ' selectlist--focus' : ' selectlist--blur'}`}
+          onClick={this.toggleDropdown}
         >
           <input
             className="selectlist__input"
             type="text"
             placeholder="Seleccione una opción"
-            onFocus={this.handleInputFocus}
-            onBlur={this.handleInputBlur}
-            onChange={this.handleInputChange}
             ref={this.selectlistInput}
             value={state.value}
+            onChange={this.searchItem}
           />
           <Icon
             className="selectlist__icono"
             icon="caret-down"
             color="texto-regular"
             size={null}
-            onClick={this.handleIconClick}
           />
           {state.dropdownIsOpen
-            ? <ul
-                className="dropdown default-scrollbar"
-                onMouseUp={this.handleItemSelect}
-              >
+            ? <ul className="dropdown default-scrollbar">
                 {state.options
                   ? state.options.map (option => (
-                      <li className="dropdown__item">
+                      <li className="dropdown__item" key={option.toString ()}>
                         {option}
                       </li>
                     ))
