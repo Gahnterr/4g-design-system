@@ -19,7 +19,7 @@ export default class Selectlist extends React.Component {
     document.addEventListener ('click', this.handleClickOutside);
   };
 
-  componentWillMount = () => {
+  componentWillUnmount = () => {
     document.removeEventListener ('click', this.handleClickOutside);
   };
 

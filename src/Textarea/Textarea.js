@@ -1,56 +1,46 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
-import colors from '../styles/colors.json';
-import '../styles/styles.css';
 
 export default class Textarea extends React.Component {
-  state = {error: this.props.error};
+  state = {error: this.props.error, value: ''};
 
-  styling = (props, state) => {
-    const stylesLabel = `
-      opacity: ${props.disabled ? '0.5' : '1.0'};
-    `;
+  handleBlur = () => {
+    if (this.props.required) {
+      this.setState ({error: this.state.value ? false : true});
+    }
+    this.props.onBlur;
+  };
 
-    const stylesTextarea = `
-      border: solid 1px ${state.error ? colors.constantes.error : null};
+  handleChange = e => {
+    this.props.onChange;
+    this.setState ({value: e.target.value});
+  };
 
-      &:focus {
-        border: solid 1px ${state.error ? colors.constantes.error : null};
-      }
-    `;
+  toError = () => {
+    this.setState ({error: true});
+  };
 
-    return {stylesLabel, stylesTextarea};
+  toNeutral = () => {
+    this.setState ({error: false});
   };
 
   render () {
     const props = this.props;
     const state = this.state;
-    const {stylesLabel, stylesTextarea} = this.styling (props, state);
 
     return (
       <React.Fragment>
         {props.label
-          ? <label css={stylesLabel} className="label texto-regular">
+          ? <label className="form-label texto-regular">
               {props.label}
             </label>
           : null}
         <textarea
-          css={stylesTextarea}
-          className="textarea texto-regular"
-          onClick={props.onClick}
-          onChange={props.onChange}
-          onFocus={props.onFocus}
-          onBlur={props.onBlur}
-          autofocus={props.autofocus}
-          disabled={props.disabled}
-          error={props.error}
-          form={props.form}
-          maxlength={props.maxlength}
-          name={props.name}
-          placeholder={props.placeholder}
-          readonly={props.readonly}
-          required={props.required}
-          rows={props.rows}
+          className={`textarea texto-regular${state.error ? ' textarea--error' : ''}`}
+          onBlur={this.handleBlur}
+          onChange={this.handleChange}
+          value={state.value}
+          {...props}
         >
           {props.children}
         </textarea>
@@ -60,22 +50,73 @@ export default class Textarea extends React.Component {
 }
 
 Textarea.propTypes = {
+  /** 
+   * El texto que aparecerá como etiqueta. Si se deja vacío, la etiqueta no será renderizada.
+  */
+
   label: PropTypes.string,
-  children: PropTypes.string,
+  /** 
+   * Interacción que se ejecutará al cambiar el valor del input.
+  */
+
   onChange: PropTypes.func,
+  /** 
+   * Interacción que se ejecutará al hacer clic sobre el text area.
+  */
+
   onClick: PropTypes.func,
-  onChange: PropTypes.func,
+  /** 
+   * Interacción que se ejecutará al hacer enfoque sobre el text area.
+  */
+
   onFocus: PropTypes.func,
+  /** 
+   * Interacción que se ejecutará al remover el enfoque sobre el text area.
+  */
+
   onBlur: PropTypes.func,
+  /** 
+   * Si se activa, se enfocará automáticamente este text area.
+   * Sólo debe haber 1 elemento con esta propiedad activa para que funcione.
+  */
+
   autofocus: PropTypes.bool,
+  /** 
+   * Define si se mostrará deshabilitado o no.
+  */
+
   disabled: PropTypes.bool,
+  /** 
+   * Define si se mostrará el text area con formato de error o no.
+  */
+
   error: PropTypes.bool,
-  form: PropTypes.string,
+  /** 
+   * Número máximo de caracteres que aceptará el text area.
+   * Si se deja en 0, no habrá límite de caracteres.
+  */
+
   maxlength: PropTypes.number,
-  name: PropTypes.string,
+  /** 
+   * El texto que aparece cuando no tiene valor el text area.
+  */
+
   placeholder: PropTypes.string,
+  /** 
+   * Indica que el text area es de sólo lectura, no se podrá modificar su contenido.
+  */
+
   readonly: PropTypes.bool,
+  /** 
+   * Indica que este text area es requerido. Debe tener al menos 1 caracter, de otra manera, se muestra con formato de error.
+  */
+
   required: PropTypes.bool,
+  /** 
+   * Altura del text area según el número de líneas de texto que se quieren mostrar a la vez.
+   * Si el texto crece más que el alto del text area, se mostrará automáticamente una barra de desplazamiento.
+  */
+
   rows: PropTypes.number,
 };
 

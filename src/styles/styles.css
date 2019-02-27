@@ -314,6 +314,10 @@
   opacity: 0.5;
 }
 
+.textarea--error {
+  border-color: var(--error);
+}
+
 /* Select list */
 .selectlist {
   display: flex;
