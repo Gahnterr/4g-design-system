@@ -15,13 +15,27 @@ export default class Selectlist extends React.Component {
 
   selectlistInput = React.createRef ();
 
+  componentDidMount = () => {
+    document.addEventListener ('click', this.handleClickOutside);
+  };
+
+  componentWillMount = () => {
+    document.removeEventListener ('click', this.handleClickOutside);
+  };
+
+  handleClickOutside = e => {
+    if (e.target.nodeName === 'LI') {
+      this.selectItem (e);
+    } else if (e.target.nodeName === 'I' || e.target.nodeName === 'INPUT') {
+      null;
+    } else {
+      this.closeDropdown ();
+    }
+  };
+
   openDropdown = () => {
     this.setState ({dropdownIsOpen: true});
-    this.selectlistInput.current.addEventListener (
-      'focusout',
-      this.closeDropdown,
-      false
-    );
+    this.selectlistInput.current.focus ();
   };
 
   closeDropdown = () => {
@@ -30,17 +44,21 @@ export default class Selectlist extends React.Component {
       dropdownIsOpen: false,
       isSearching: false,
     });
-    this.selectlistInput.current.removeEventListener ();
   };
 
   buildDropdown = options => {
-    return options.map (option => (
-      <li className="dropdown__item" onClick={this.selectItem}>{option}</li>
+    return options.map ((option, index) => (
+      <li
+        className="dropdown__item"
+        onClickCapture={this.selectItem}
+        key={index}
+      >
+        {option}
+      </li>
     ));
   };
 
   selectItem = e => {
-    e.preventPropagation ();
     this.setState ({
       selected: e.target.innerText,
       value: e.target.innerText,
@@ -71,6 +89,9 @@ export default class Selectlist extends React.Component {
         {props.label ? <Label>{props.label}</Label> : null}
         <div
           className={`selectlist${state.dropdownIsOpen ? ' selectlist--focus' : ' selectlist--blur'}`}
+          onClick={
+            state.dropdownIsOpen ? this.closeDropdown : this.openDropdown
+          }
         >
           <input
             className="selectlist__input"
@@ -78,19 +99,12 @@ export default class Selectlist extends React.Component {
             placeholder="Seleccione una opción"
             ref={this.selectlistInput}
             value={state.value}
-            onFocus={this.openDropdown}
-            /* onBlur={this.closeDropdown} */
             onChange={this.searchItem}
           />
           <Icon
             className="selectlist__icono"
             icon="caret-down"
             color="texto-regular"
-            onClick={() =>
-              state.dropdownIsOpen
-                ? this.selectlistInput.current.blur ()
-                : this.selectlistInput.current.focus ()}
-            size={null}
           />
           {state.dropdownIsOpen
             ? <ul className="dropdown">
