@@ -30,6 +30,7 @@
 
   /* Texto */
   --roboto: 'Roboto', 'Arial', sans-serif;
+  --enc-titulo: normal normal 500 22px / normal var(--roboto);
 
   /* Easings */
   --anim-out: all ease-in 250ms;
@@ -389,4 +390,9 @@
 .dropdown__item:hover {
   background-color: var(--primario-light);
   color: var(--white);
+}
+
+/* Títulos de encabezados */
+.header__title {
+  font: var(--enc-titulo);
 }

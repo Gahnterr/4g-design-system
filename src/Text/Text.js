@@ -1,24 +1,8 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
-import typography from '../styles/typography.json';
-import colors from '../styles/colors.json';
 
 const Text = props => {
-  const styles = `
-    font-family: ${typography.fontFamily};
-    color: ${props.color};       
-    font-size: ${typography.size.m}px;
-    font-weight: ${typography.weight.regular};
-    width: 100%;
-    white-space: ${props.whiteSpace};
-
-    i {
-        font-size: inherit;
-        font-weight: ${typography.weight.regular};
-    }
-  `;
-
-  return <p className={props.className} css={styles}>{props.children}</p>;
+  return <p className={props.className}>{props.children}</p>;
 };
 
 Text.propTypes = {
@@ -40,7 +24,6 @@ Text.propTypes = {
 Text.defaultProps = {
   children: 'Aquí va tu texto...',
   align: 'left',
-  color: colors.constantes.texto.regular,
   whiteSpace: 'initial',
 };
 
