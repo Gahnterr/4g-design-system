@@ -22,7 +22,7 @@ module.exports = {
       },
       {
         name: 'Componentes avanzados',
-        include: ['src/Header/Header.js', 'src/Modal/Modal.js'],
+        include: ['src/Modal/Modal.js'],
       },
     ],
   },
