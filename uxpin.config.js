@@ -6,7 +6,6 @@ module.exports = {
         include: [
           'src/Icon/Icon.js',
           'src/Text/Text.js',
-          'src/Form/Form.js',
           'src/Input/Input.js',
           'src/Textarea/Textarea.js',
           'src/Selectlist/Selectlist.js',
