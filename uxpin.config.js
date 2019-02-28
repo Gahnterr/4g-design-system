@@ -17,17 +17,12 @@ module.exports = {
           'src/Button/Button.js',
           'src/Link/Link.js',
           'src/Back/Back.js',
-          'src/IconButton/IconButton.js',
           'src/ProcessButton/ProcessButton.js',
         ],
       },
       {
         name: 'Componentes avanzados',
-        include: [
-          'src/Header/Header.js',
-          'src/ProcessBar/ProcessBar.js',
-          'src/Modal/Modal.js',
-        ],
+        include: ['src/Header/Header.js', 'src/Modal/Modal.js'],
       },
     ],
   },
