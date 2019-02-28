@@ -48,7 +48,7 @@
     "enzyme-to-json": "^3.3.4",
     "eslint-plugin-react-hooks": "^1.0.1",
     "file-loader": "^3.0.1",
-    "jest": "^23.6.0",
+    "jest": "^24.1.0",
     "jest-emotion": "^9.2.11",
     "merge": "^1.2.1",
     "node-sass": "^4.11.0",
