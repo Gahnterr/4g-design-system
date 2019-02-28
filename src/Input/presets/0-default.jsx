@@ -1,3 +1,4 @@
-import Input from '../../Input/Input.js'
+import React from 'react';
+import Input from '../../Input/Input.js';
 
-export default <Input uxpId='1' label='Etiqueta:' placeholder='Placeholder' />
+export default <Input uxpId="1" label="Etiqueta:" placeholder="Placeholder" />;

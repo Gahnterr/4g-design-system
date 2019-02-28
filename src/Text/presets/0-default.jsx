@@ -1,3 +1,4 @@
+import React from 'react';
 import Text from '../Text';
 import colors from '../../styles/colors.json';
 

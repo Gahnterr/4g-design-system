@@ -1,3 +1,4 @@
+import React from 'react';
 import Textarea from '../Textarea.js';
 
 export default (
