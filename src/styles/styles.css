@@ -170,7 +170,7 @@
 }
 
 /* Botón de tipo link */
-.ds-link {
+.temis-link {
   font-family: var(--roboto);
   font-weight: 400;
   white-space: nowrap;
@@ -180,23 +180,23 @@
   cursor: pointer;
 }
 
-.ds-link--compacto {
+.temis-link--compacto {
   font-size: 14px;
 }
 
-.ds-link--regular {
+.temis-link--regular {
   font-size: 16px;
 }
 
-.ds-link:hover {
+.temis-link:hover {
   color: var(--secundario-light);
 }
 
-.ds-link:active {
+.temis-link:active {
   color: var(--secundario-dark);
 }
 
-.ds-link--disabled {
+.temis-link--disabled {
   opacity: 0;
   cursor: default;
   pointer-events: none;

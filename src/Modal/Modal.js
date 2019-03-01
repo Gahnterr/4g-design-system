@@ -5,7 +5,6 @@ import Icon from '../Icon/Icon.js';
 import PropTypes from 'prop-types';
 import colors from '../styles/colors.json';
 import typography from '../styles/typography.json';
-import '../styles/styles.css';
 
 const stylesModalContainer = `
   display: flex;

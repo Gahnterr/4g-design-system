@@ -5,7 +5,7 @@ import '../styles/styles.css';
 const Link = props => {
   return (
     <a
-      className={`ds-link ds-link--${props.size} ${props.disabled ? 'ds-link--disabled' : null}`}
+      className={`temis-link temis-link--${props.size} ${props.disabled ? 'temis-link--disabled' : null}`}
       {...props}
     >
       {props.children}
