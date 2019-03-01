@@ -254,12 +254,11 @@
 }
 
 /* Etiquetas */
-.form-label {
+.temis-label {
   display: block;
-  width: auto;
+  width: 100%;
   margin-bottom: 8px;
   margin-right: 8px;
-
   color: var(--texto-regular);
   font-family: var(--roboto);
   font-size: 14px;
@@ -320,19 +319,18 @@
 }
 
 /* Select list */
-.selectlist {
+.temis-selectlist {
   display: flex;
-  box-sizing: border-box;
   width: 100%;
   height: 30px;
   border: solid 1px var(--bordes);
 }
 
-.selectlist--focus {
+.temis-selectlist--focus {
   border-color: var(--primario-base);
 }
 
-.selectlist__input {
+.temis-selectlist__input {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -345,11 +343,11 @@
   border: none;
 }
 
-.selectlist__input::placeholder {
+.temis-selectlist__input::placeholder {
   color: var(--texto-auxiliar);
 }
 
-.selectlist__icono {
+.temis-selectlist__icono {
   display: flex !important;
   width: 30px;
   height: 100%;
@@ -360,12 +358,9 @@
   cursor: pointer;
 }
 
-.dropdown {
+.temis-dropdown {
   display: block;
   position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
   width: 100%;
   box-sizing: border-box;
   max-height: 300px;
@@ -378,18 +373,24 @@
   overflow-y: auto;
 }
 
-.dropdown__item {
+.temis-dropdown__item {
   display: flex;
   height: 30px;
   padding: 0 10px;
   align-items: center;
   background-color: var(--white);
   color: var(--texto-regular);
+  cursor: default;
 }
 
-.dropdown__item:hover {
+.temis-dropdown__item:hover {
   background-color: var(--primario-light);
   color: var(--white);
+}
+
+.temis-dropdown__item--disabled {
+  color: var(--texto-auxiliar);
+  pointer-events: none;
 }
 
 /* Títulos de encabezados */

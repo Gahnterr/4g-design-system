@@ -2,7 +2,7 @@ import React from 'react';
 import {PropTypes} from 'prop-types';
 
 const Label = props => {
-  return <label className="form-label">{props.children}</label>;
+  return <label className="temis-label">{props.children}</label>;
 };
 
 Label.propTypes = {

@@ -9,6 +9,8 @@ module.exports = {
           'src/Input/Input.js',
           'src/Textarea/Textarea.js',
           'src/Selectlist/Selectlist.js',
+          'src/Dropdown/Dropdown.js',
+          'src/SelectlistItem/SelectlistItem.js',
         ],
       },
       {
