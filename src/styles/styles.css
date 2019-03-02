@@ -227,6 +227,8 @@
 
 /* Botón de proceso */
 .btn--proceso {
+  display: flex;
+  margin: 0;
   min-width: 100px;
   max-width: 200px;
   width: auto;
@@ -251,6 +253,21 @@
 .btn--proceso:disabled {
   opacity: 1;
   color: var(--texto-auxiliar);
+}
+
+/* Barra de procesos */
+.temis-barra-proceso {
+  display: flex;
+  width: fit-content;
+  height: auto;
+  align-items: right;
+  flex-wrap: nowrap;
+}
+
+.btn--proceso-overflow {
+  width: 35px;
+  min-width: unset;
+  max-width: unset;
 }
 
 /* Etiquetas */
