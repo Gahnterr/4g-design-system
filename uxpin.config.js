@@ -10,7 +10,7 @@ module.exports = {
           'src/Textarea/Textarea.js',
           'src/Selectlist/Selectlist.js',
           'src/Dropdown/Dropdown.js',
-          'src/SelectlistItem/SelectlistItem.js',
+          'src/DropdownItem/DropdownItem.js',
         ],
       },
       {
@@ -19,6 +19,7 @@ module.exports = {
           'src/Button/Button.js',
           'src/Link/Link.js',
           'src/Back/Back.js',
+          'src/ProcessBar/ProcessBar.js',
           'src/ProcessButton/ProcessButton.js',
         ],
       },

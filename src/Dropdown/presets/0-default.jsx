@@ -1,12 +1,12 @@
 import React from 'react';
 import Dropdown from './../Dropdown';
-import SelectlistItem from '../../SelectlistItem/SelectlistItem';
+import DropdownItem from '../../DropdownItem/DropdownItem';
 
 export default (
   <Dropdown uxpId="selectlist.dropdown.1" isOpen>
-    <SelectlistItem uxpId="selectlist.item.1">México</SelectlistItem>
-    <SelectlistItem uxpId="selectlist.item.2">Estados Unidos</SelectlistItem>
-    <SelectlistItem uxpId="selectlist.item.3">Panamá</SelectlistItem>
-    <SelectlistItem uxpId="selectlist.item.4">Guatemala</SelectlistItem>
+    <DropdownItem uxpId="selectlist.item.1">México</DropdownItem>
+    <DropdownItem uxpId="selectlist.item.2">Estados Unidos</DropdownItem>
+    <DropdownItem uxpId="selectlist.item.3">Panamá</DropdownItem>
+    <DropdownItem uxpId="selectlist.item.4">Guatemala</DropdownItem>
   </Dropdown>
 );

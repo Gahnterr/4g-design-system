@@ -3,7 +3,7 @@ import Icon from '../Icon/Icon';
 import Label from '../Label/Label';
 import {PropTypes} from 'prop-types';
 import Dropdown from '../Dropdown/Dropdown';
-import SelectlistItem from '../SelectlistItem/SelectlistItem';
+import DropdownItem from '../DropdownItem/DropdownItem';
 
 export default class Selectlist extends React.Component {
   state = {
@@ -82,7 +82,7 @@ export default class Selectlist extends React.Component {
         <Dropdown isOpen={state.dropdownIsOpen}>
           {props.children
             ? props.children
-            : <SelectlistItem disabled>No existen registros...</SelectlistItem>}
+            : <DropdownItem disabled>No existen registros...</DropdownItem>}
         </Dropdown>
       </React.Fragment>
     );

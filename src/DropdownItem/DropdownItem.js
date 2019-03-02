@@ -1,7 +1,7 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
 
-const SelectlistItem = props => {
+const DropdownItem = props => {
   return (
     <li
       className={`temis-dropdown__item${props.disabled ? ' temis-dropdown__item--disabled' : ''}`}
@@ -13,11 +13,11 @@ const SelectlistItem = props => {
   );
 };
 
-SelectlistItem.propTypes = {
+DropdownItem.propTypes = {
   onClick: PropTypes.func,
   children: PropTypes.string,
   disabled: PropTypes.bool,
   key: PropTypes.string,
 };
 
-export default SelectlistItem;
+export default DropdownItem;
