@@ -282,6 +282,10 @@
   font-weight: 400;
 }
 
+.temis-label--disabled {
+  opacity: 0.5;
+}
+
 /* Inputs */
 .input {
   display: block;
