@@ -9,7 +9,7 @@ export default class Selectlist extends React.Component {
   state = {
     defaultValue: this.props.defaultValue,
     value: '',
-    dropdownIsOpen: false,
+    dropdownIsOpen: this.props.dropdownIsOpen,
   };
 
   selectlistInput = React.createRef ();
@@ -99,4 +99,10 @@ Selectlist.propTypes = {
    * Indica el valor precargado por defecto.
    */
   defaultValue: PropTypes.string,
+  dropdownIsOpen: PropTypes.bool,
+};
+
+Selectlist.defaultProps = {
+  label: 'Países:',
+  dropdownIsOpen: false,
 };
