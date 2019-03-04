@@ -59,7 +59,9 @@ export default class Selectlist extends React.Component {
     return (
       <React.Fragment>
         {props.label
-          ? <Label disabled={props.disabled}>{props.label}</Label>
+          ? <Label disabled={props.disabled ? props.disabled : null}>
+              {props.label}
+            </Label>
           : null}
         <div
           className={`temis-selectlist${state.dropdownIsOpen ? ' temis-selectlist--focus' : ' temis-selectlist--blur'}`}

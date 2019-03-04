@@ -36,7 +36,9 @@ export default class Input extends Component {
     return (
       <React.Fragment>
         {props.label
-          ? <Label>{props.label}</Label>
+          ? <Label disabled={props.disabled ? props.disabled : null}>
+              {props.label}
+            </Label>
           : null}
         <input
           css={stylesInput}
