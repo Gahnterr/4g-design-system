@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import colors from '../styles/colors.json';
+import Label from '../Label/Label.js';
 
 export default class Input extends Component {
   state = {
@@ -35,9 +36,7 @@ export default class Input extends Component {
     return (
       <React.Fragment>
         {props.label
-          ? <label className="form-label" css={stylesLabel} for={props.for}>
-              {props.label}
-            </label>
+          ? <Label>{props.label}</Label>
           : null}
         <input
           css={stylesInput}
