@@ -41,7 +41,6 @@ export default class Selectlist extends React.Component {
     this.setState ({
       value: this.state.selected,
       dropdownIsOpen: false,
-      isSearching: false,
     });
   };
 
@@ -59,7 +58,9 @@ export default class Selectlist extends React.Component {
 
     return (
       <React.Fragment>
-        {props.label ? <Label>{props.label}</Label> : null}
+        {props.label
+          ? <Label disabled={props.disabled}>{props.label}</Label>
+          : null}
         <div
           className={`temis-selectlist${state.dropdownIsOpen ? ' temis-selectlist--focus' : ' temis-selectlist--blur'}`}
           onClick={
@@ -99,6 +100,7 @@ Selectlist.propTypes = {
    * Indica el valor precargado por defecto.
    */
   defaultValue: PropTypes.string,
+  disabled: PropTypes.bool,
   dropdownIsOpen: PropTypes.bool,
 };
 
