@@ -32,6 +32,8 @@ module.exports = {
         include: [
           'src/CSSGridContainer/CSSGridContainer.js',
           'src/CSSGridItem/CSSGridItem.js',
+          'src/FlexboxContainer/FlexboxContainer.js',
+          'src/FlexboxItem/FlexboxItem.js',
         ],
       },
     ],
