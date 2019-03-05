@@ -27,6 +27,13 @@ module.exports = {
         name: 'Componentes avanzados',
         include: ['src/Modal/Modal.js'],
       },
+      {
+        name: 'Layout',
+        include: [
+          'src/CSSGridContainer/CSSGridContainer.js',
+          'src/CSSGridItem/CSSGridItem.js',
+        ],
+      },
     ],
   },
   name: '4G Design system',

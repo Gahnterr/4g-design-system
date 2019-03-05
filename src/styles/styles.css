@@ -356,7 +356,13 @@
   border-color: var(--primario-base);
 }
 
-.temis-selectlist__input {
+.temis-selectlist--disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.temis-selectlist__input,
+.temis-selectlist__input:focus {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -367,11 +373,6 @@
   font-weight: 400;
   color: var(--texto-regular);
   border: none;
-}
-
-.temis-selectlist--disabled {
-  pointer-events: none;
-  opacity: 0.5;
 }
 
 .temis-selectlist__input::placeholder {
