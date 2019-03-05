@@ -7,12 +7,13 @@ const CSSGridContainer = props => {
     grid-template-columns: ${props.gridTemplateColumns};
     grid-template-rows: ${props.gridTemplateRows};
     grid-template-areas: ${props.gridTemplateAreas};
-    grid-template: ${props.gridTemplate};
-    grid-column-gap: ${props.gridColumGap}px;
-    grid-row-gap: ${props.gridRowGap}px;
+    grid-column-gap: ${props.gridColumnGap};
+    grid-row-gap: ${props.gridRowGap};
     justify-items: ${props.justifyItems};
-    width: 100%;
-    height: 100%;
+    align-items: ${props.alignitems};
+    justify-content: ${props.justifyContent};
+    align-content: ${props.alignContent};
+    height: ${props.autoHeight ? 'auto' : '100%'};
   `;
 
   return <div css={styles}>{props.children}</div>;
@@ -21,6 +22,7 @@ const CSSGridContainer = props => {
 CSSGridContainer.propTypes = {
   children: PropTypes.node,
   display: PropTypes.oneOf (['grid', 'inline-grid']),
+  autoHeight: PropTypes.bool,
   /**
    * Aquí se definen la cantidad de columnas y las anchuras de las mismas.
    * 
@@ -42,9 +44,8 @@ CSSGridContainer.propTypes = {
    */
   gridTemplateRows: PropTypes.string,
   gridTemplateAreas: PropTypes.string,
-  gridTemplate: PropTypes.string,
-  gridColumnGap: PropTypes.number,
-  gridRowGap: PropTypes.number,
+  gridColumnGap: PropTypes.string,
+  gridRowGap: PropTypes.string,
   justifyItems: PropTypes.oneOf (['start', 'end', 'center', 'stretch']),
   alignItems: PropTypes.oneOf (['start', 'end', 'center', 'stretch']),
   justifyContent: PropTypes.oneOf ([
@@ -68,11 +69,16 @@ CSSGridContainer.propTypes = {
 };
 
 CSSGridContainer.defaultProps = {
+  autoHeight: true,
   display: 'grid',
-  gridTemplateColumns: '40px 50px auto 50px 40px',
-  gridTemplateRows: '25% 100px auto',
+  gridTemplateRows: 'none',
+  gridTemmplateAreas: 'none',
+  gridColumnGap: '20px',
+  gridRowGap: '20px',
   justifyItems: 'start',
   alignItems: 'start',
+  justifyContent: 'stretch',
+  alignContent: 'stretch',
 };
 
 export default CSSGridContainer;

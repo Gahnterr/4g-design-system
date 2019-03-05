@@ -1,16 +1,29 @@
 import React from 'react';
 import CSSGridContainer from './../CSSGridContainer';
-import Text from '../../Text/Text';
+import CSSGridItem from '../../CSSGridItem/CSSGridItem';
 
 export default (
   <CSSGridContainer
     uxpId="cssgrid.container.1"
+    autoHeight={true}
     display="grid"
-    gridTemplateColumns="40px 50px auto 50px 40px"
-    gridTemplateRows="25% 100px auto"
+    gridTemplateColumns="1fr 1fr 1fr 1fr"
+    gridTemplateRows="auto"
+    gridTemplateAreas="none"
+    gridColumnGap="20px"
+    gridRowGap="20px"
   >
-    <Text color="#6B6B6B" type="paragraph" align="left">
-      CSS Grid Container
-    </Text>
+    <CSSGridItem uxpId="cssgrid.item.1" gridArea="initial">
+      CSS Grid Item (Columna) 1
+    </CSSGridItem>
+    <CSSGridItem uxpId="cssgrid.item.2" gridArea="initial">
+      CSS Grid Item (Columna) 2
+    </CSSGridItem>
+    <CSSGridItem uxpId="cssgrid.item.3" gridArea="initial">
+      CSS Grid Item (Columna) 3
+    </CSSGridItem>
+    <CSSGridItem uxpId="cssgrid.item.4" gridArea="initial">
+      CSS Grid Item (Columna) 4
+    </CSSGridItem>
   </CSSGridContainer>
 );
