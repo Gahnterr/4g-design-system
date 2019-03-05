@@ -4,6 +4,7 @@ import Label from '../Label/Label';
 import {PropTypes} from 'prop-types';
 import Dropdown from '../Dropdown/Dropdown';
 import DropdownItem from '../DropdownItem/DropdownItem';
+import Input from '../Input/Input';
 
 export default class Selectlist extends React.Component {
   state = {
@@ -59,17 +60,18 @@ export default class Selectlist extends React.Component {
     return (
       <React.Fragment>
         {props.label
-          ? <Label disabled={props.disabled ? props.disabled : null}>
+          ? <Label>
               {props.label}
             </Label>
           : null}
         <div
-          className={`temis-selectlist${state.dropdownIsOpen ? ' temis-selectlist--focus' : ' temis-selectlist--blur'}`}
+          className={`temis-selectlist${(state.dropdownIsOpen ? ' temis-selectlist--focus' : ' temis-selectlist--blur') + (props.disabled ? ' temis-selectlist--disabled' : '')}`}
           onClick={
             state.dropdownIsOpen ? this.closeDropdown : this.openDropdown
           }
         >
-          <input
+          <Input
+            label={null}
             className="temis-selectlist__input"
             type="text"
             placeholder="Seleccione una opción"

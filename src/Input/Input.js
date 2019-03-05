@@ -13,36 +13,19 @@ export default class Input extends Component {
     this.setState ({value: e.target.value});
   };
 
-  styling (props, state) {
-    const stylesLabel = `
-      opacity: ${props.disabled ? '0.5' : '1'};
-    `;
-
-    const stylesInput = `
-      border: solid 1px ${state.error ? colors.constantes.error : colors.constantes.bordes};
-
-      &:focus {
-        border: solid 1px ${state.error ? colors.constantes.error : colors.default.primario.base};
-      }
-    `;
-    return {stylesLabel, stylesInput};
-  }
-
   render () {
     const props = this.props;
     const state = this.state;
-    const {stylesLabel, stylesInput} = this.styling (props, state);
 
     return (
       <React.Fragment>
         {props.label
-          ? <Label disabled={props.disabled ? props.disabled : null}>
+          ? <Label disabled={props.disabled ? true : false}>
               {props.label}
             </Label>
           : null}
         <input
-          css={stylesInput}
-          className="input"
+          className={`temis-input ${(state.error ? 'temis-input--error' : '') + props.className}`}
           onChange={props.onChange}
           onClick={props.onClick}
           onFocus={props.onFocus}
@@ -141,6 +124,7 @@ Input.propTypes = {
   autoComplete: PropTypes.bool,
   width: PropTypes.number,
   height: PropTypes.number,
+  className: PropTypes.string,
 };
 
 Input.defaultProps = {

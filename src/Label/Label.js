@@ -4,7 +4,7 @@ import {PropTypes} from 'prop-types';
 const Label = props => {
   return (
     <label
-      className={`temis-label${(props.disabled ? ' temis-label--disabled' : '') + props.className}`}
+      className={`temis-label${(props.disabled ? ' temis-label--disabled' : ' ') + props.className}`}
     >
       {props.children}
     </label>
