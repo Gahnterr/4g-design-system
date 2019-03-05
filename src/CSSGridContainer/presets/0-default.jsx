@@ -13,16 +13,16 @@ export default (
     gridColumnGap="20px"
     gridRowGap="20px"
   >
-    <CSSGridItem uxpId="cssgrid.item.1" gridArea="initial">
+    <CSSGridItem uxpId="cssgrid.item.1" gridArea="unset">
       CSS Grid Item (Columna) 1
     </CSSGridItem>
-    <CSSGridItem uxpId="cssgrid.item.2" gridArea="initial">
+    <CSSGridItem uxpId="cssgrid.item.2" gridArea="unset">
       CSS Grid Item (Columna) 2
     </CSSGridItem>
-    <CSSGridItem uxpId="cssgrid.item.3" gridArea="initial">
+    <CSSGridItem uxpId="cssgrid.item.3" gridArea="unset">
       CSS Grid Item (Columna) 3
     </CSSGridItem>
-    <CSSGridItem uxpId="cssgrid.item.4" gridArea="initial">
+    <CSSGridItem uxpId="cssgrid.item.4" gridArea="unset">
       CSS Grid Item (Columna) 4
     </CSSGridItem>
   </CSSGridContainer>
