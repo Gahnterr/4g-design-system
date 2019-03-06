@@ -8,6 +8,7 @@ const Button = props => {
       className={`btn btn--${props.type + (props.destructive ? ' btn--destructivo' : '')}`}
       type="button"
       disabled={props.disabled}
+      onClick={props.onClick}
     >
       {props.icon || props.type === 'terciario'
         ? <Icon
