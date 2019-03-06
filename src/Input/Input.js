@@ -93,7 +93,7 @@ Input.propTypes = {
     'url',
     'week',
   ]),
-  vlaue: PropTypes.string,
+  value: PropTypes.string,
   onChange: PropTypes.func,
   onClick: PropTypes.func,
   onFocus: PropTypes.func,
