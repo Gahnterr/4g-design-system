@@ -5,7 +5,7 @@ import Label from '../Label/Label.js';
 
 export default class Input extends Component {
   state = {
-    value: '',
+    value: this.props.value,
     error: this.props.error,
   };
 
@@ -93,6 +93,7 @@ Input.propTypes = {
     'url',
     'week',
   ]),
+  vlaue: PropTypes.string,
   onChange: PropTypes.func,
   onClick: PropTypes.func,
   onFocus: PropTypes.func,
