@@ -437,6 +437,7 @@
 /* Modales */
 .temis-modal {
   min-width: fit-content;
+  max-width: 1200px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--modal-shadow);

@@ -7,17 +7,25 @@ import CSSGridItem from './../../CSSGridItem/CSSGridItem';
 
 export default (
   <ModalFooter uxpId="modal.footer.1">
-    <CSSGridContainer uxpId="cssgrid.container.1">
-      <CSSGridItem uxpId="cssgrid.item.1">
-        <Button uxpId="button.primario.1" type="primario">
-          Acción primaria
-        </Button>
+    <CSSGridContainer
+      uxpId="cssgrid.container.1"
+      display="grid"
+      autoHeight={false}
+      gridTemplateColumns="1fr auto auto"
+      gridColumnGap="10px"
+    >
+      <CSSGridItem uxpId="cssgrid.item.1" alignSelf="center" gridArea="">
+        <Link uxpId="link.1" size="regular">Regresar</Link>
+      </CSSGridItem>
+      <CSSGridItem uxpId="cssgrid.item.2" gridArea="">
         <Button uxpId="button.secundario.1" type="secundario">
           Acción secundaria
         </Button>
       </CSSGridItem>
-      <CSSGridItem uxpId="cssgrid.item.2">
-        <Link uxpId="link.1">Regresar</Link>
+      <CSSGridItem uxpId="cssgrid.item.3" gridArea="">
+        <Button uxpId="button.primario.1" type="primario">
+          Aceptar
+        </Button>
       </CSSGridItem>
     </CSSGridContainer>
   </ModalFooter>

@@ -24,10 +24,11 @@ module.exports = {
         ],
       },
       {
-        name: 'Modal',
+        name: 'Modales',
         include: [
           'src/Modal/Modal.js',
           'src/ModalHeader/ModalHeader.js',
+          'src/ModalBody/ModalBody.js',
           'src/ModalFooter/ModalFooter.js',
         ],
       },
