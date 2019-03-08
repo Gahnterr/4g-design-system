@@ -30,6 +30,7 @@
 
   /* Texto */
   --roboto: 'Roboto', 'Arial', sans-serif;
+  --body-parrafo: normal normal 400 14px / normal var(--roboto);
   --enc-titulo: normal normal 500 22px / normal var(--roboto);
 
   /* Easings */
@@ -72,9 +73,9 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
   cursor: default;
-  transition: var(--anim-out);
+  /* transition: var(--anim-out); */
 }
 
 .btn__icono {
@@ -84,12 +85,12 @@
 }
 
 .btn:hover {
-  transition: var(--anim-in);
+  /* transition: var(--anim-in); */
 }
 
 .btn:disabled {
   opacity: 0.5;
-  transition: var(--anim-linear);
+  /* transition: var(--anim-linear); */
   pointer-events: none;
 }
 
@@ -435,6 +436,7 @@
 
 /* Modales */
 .temis-modal {
+  min-width: fit-content;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--modal-shadow);
@@ -479,7 +481,16 @@
   opacity: 0.5;
 }
 
+.temis-modal__body {
+  padding: 20px;
+  background-color: var(--white);
+  font: var(--body-parrafo);
+  color: var(--texto-regular);
+}
+
 .temis-modal__footer {
+  width: 100%;
+  height: 100%;
   padding: 20px;
   width: 100%;
   height: 80px;
