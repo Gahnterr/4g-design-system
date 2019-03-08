@@ -35,4 +35,9 @@ Link.propTypes = {
   disabled: PropTypes.bool,
 };
 
+Link.defaultProps = {
+  children: 'Botón tipo link',
+  size: 'regular',
+};
+
 export {Link as default};
