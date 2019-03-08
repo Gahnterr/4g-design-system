@@ -56,4 +56,9 @@ Button.propTypes = {
   destructive: PropTypes.bool,
 };
 
+Button.defaultProps = {
+  children: 'Botón',
+  type: 'primario',
+};
+
 export {Button as default};
