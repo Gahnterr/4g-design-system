@@ -19,7 +19,10 @@ CSSGridItem.propTypes = {
 };
 
 CSSGridItem.defaultProps = {
-  gridArea: 'unset',
+  children: 'CSS Grid Item',
+  gridArea: '',
+  justifySelf: 'start',
+  alignSelf: 'start',
 };
 
 export default CSSGridItem;
