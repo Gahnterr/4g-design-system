@@ -31,7 +31,7 @@ export default class Textarea extends React.Component {
     return (
       <React.Fragment>
         {props.label
-          ? <label className="form-label texto-regular">
+          ? <label className="temis-label texto-regular">
               {props.label}
             </label>
           : null}
