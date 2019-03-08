@@ -36,6 +36,9 @@
   --anim-out: all ease-in 250ms;
   --anim-in: all linear 50ms;
   --anim-linear: all linear 100ms;
+
+  /* Sombras */
+  --modal-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Estilos de texto */
@@ -428,4 +431,57 @@
 /* Títulos de encabezados */
 .header__title {
   font: var(--enc-titulo);
+}
+
+/* Modales */
+.temis-modal {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--modal-shadow);
+}
+
+.temis-modal__header {
+  display: flex;
+  background-color: var(--primario-light);
+  height: 50px;
+  padding: 12px 0 12px 20px;
+  align-items: center;
+}
+
+.temis-modal__header__title {
+  flex-grow: 1;
+  margin: 0;
+  font-family: var(--roboto);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.temis-modal__header__close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  right: 0;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.temis-modal__header__close:hover {
+  opacity: 1;
+}
+
+.temis-modal__header__close:active {
+  opacity: 0.5;
+}
+
+.temis-modal__footer {
+  padding: 20px;
+  width: 100%;
+  height: 80px;
+  background-color: var(--fondo-de-app);
 }

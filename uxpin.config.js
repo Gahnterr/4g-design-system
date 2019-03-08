@@ -24,8 +24,12 @@ module.exports = {
         ],
       },
       {
-        name: 'Componentes avanzados',
-        include: ['src/Modal/Modal.js'],
+        name: 'Modal',
+        include: [
+          'src/Modal/Modal.js',
+          'src/ModalHeader/ModalHeader.js',
+          'src/ModalFooter/ModalFooter.js',
+        ],
       },
       {
         name: 'Layout',

@@ -1,15 +1,9 @@
 import React from 'react';
 import Modal from '../Modal';
+import ModalHeader from '../../ModalHeader/ModalHeader';
 
 export default (
-  <Modal
-    uxpId="1"
-    title="Título del modal"
-    primaryButtonLabel="Aceptar"
-    secondaryButtonLabel="Guardar y crear otro"
-    linkLabel="Regresar"
-    show={true}
-  >
-    Cuerpo del modal. Puedes arrastrar otros componentes aquí dentro, o bien sólamente agregar texto dentro del prop children.
+  <Modal uxpId="modal.1">
+    <ModalHeader uxpId="modal.header.1" title="Encabezado del modal" />
   </Modal>
 );
