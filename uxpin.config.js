@@ -30,6 +30,7 @@ module.exports = {
           'src/ModalHeader/ModalHeader.js',
           'src/ModalBody/ModalBody.js',
           'src/ModalFooter/ModalFooter.js',
+          'src/ModalM2/ModalM2.js',
         ],
       },
       {
