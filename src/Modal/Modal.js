@@ -7,10 +7,13 @@ export default class Modal extends React.Component {
   render () {
     const props = this.props;
 
-    return <div className="temis-modal">{props.children}</div>;
+    return (
+      <div className={'temis-modal ' + props.className}>{props.children}</div>
+    );
   }
 }
 
 Modal.propTypes = {
   children: PropTypes.node,
+  className: PropTypes.string,
 };
