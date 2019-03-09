@@ -2,7 +2,9 @@ import React from 'react';
 import {PropTypes} from 'prop-types';
 
 const Text = props => {
-  return <p className={props.className}>{props.children}</p>;
+  return (
+    <p className={props.className} style={props.style}>{props.children}</p>
+  );
 };
 
 Text.propTypes = {
@@ -19,6 +21,7 @@ Text.propTypes = {
     'inherit',
   ]),
   className: PropTypes.string,
+  style: PropTypes.object,
 };
 
 Text.defaultProps = {
