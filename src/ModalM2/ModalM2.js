@@ -33,6 +33,7 @@ const ModalM2 = props => {
             height: '62px',
             textAlign: 'center',
             marginBottom: '17px',
+            fontSize: '62px',
           }}
         />
         {props.children}
