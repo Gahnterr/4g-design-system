@@ -24,6 +24,10 @@ module.exports = {
         ],
       },
       {
+        name: 'Grids',
+        include: ['src/Table/Table.js'],
+      },
+      {
         name: 'Modales',
         include: [
           'src/Modal/Modal.js',
