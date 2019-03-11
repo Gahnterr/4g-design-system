@@ -22,15 +22,15 @@ export default (
         gridTemplateColumns="1fr auto auto"
         gridColumnGap="10px"
       >
-        <CSSGridItem uxpId="cssgrid.item.1" alignSelf="center">
+        <CSSGridItem uxpId="cssgrid.item.1" alignSelf="center" gridArea=" ">
           <Link uxpId="link.1" size="regular">Regresar</Link>
         </CSSGridItem>
-        <CSSGridItem uxpId="cssgrid.item.2">
+        <CSSGridItem uxpId="cssgrid.item.2" gridArea=" ">
           <Button uxpId="button.secundario.1" type="secundario">
             Acción secundaria
           </Button>
         </CSSGridItem>
-        <CSSGridItem uxpId="cssgrid.item.3">
+        <CSSGridItem uxpId="cssgrid.item.3" gridArea=" ">
           <Button uxpId="button.primario.1" type="primario">
             Aceptar
           </Button>
