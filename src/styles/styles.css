@@ -33,6 +33,7 @@
   --body-parrafo: normal normal 400 14px / normal var(--roboto);
   --body-m2: normal normal 400 16px / normal var(--roboto);
   --enc-titulo: normal normal 500 22px / normal var(--roboto);
+  --table-header: normal normal 700 14px / normal var(--roboto);
 
   /* Easings */
   --anim-out: all ease-in 250ms;
@@ -514,4 +515,60 @@
   font: var(--body-m2);
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Tablas / Grids */
+.temis-table {
+  table-layout: fixed;
+  display: block;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  border: solid 1px var(--bordes);
+  border-collapse: collapse;
+  background-color: var(--white);
+}
+
+.temis-table__thead {
+  width: 100%;
+  background-color: var(--fondo-de-app);
+}
+
+.temis-table__tbody__tr {
+  background-color: var(--white);
+}
+
+.temis-table__tbody__tr:nth-child(even) {
+  background-color: var(--fila-de-grid);
+}
+
+.temis-table__thead__tr__th {
+  padding: 0 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  border-bottom: solid 2px var(--primario-base);
+  height: 30px;
+  text-align: left;
+  font: var(--table-header);
+  color: var(--texto-regular);
+}
+
+.temis-table__tbody__tr__td {
+  padding: 0 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font: var(--body-parrafo);
+  color: var(--texto-regular);
+  height: 50px;
+}
+
+.temis-table__cell--empty {
+  background-color: var(--white);
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
