@@ -53,6 +53,10 @@ module.exports = {
           'src/FlexboxItem/FlexboxItem.js',
         ],
       },
+      {
+        name: 'Elementos básicos de HTML',
+        include: ['src/Image/Image.js'],
+      },
     ],
   },
   name: '4G Design system',

@@ -3,7 +3,12 @@ import {PropTypes} from 'prop-types';
 
 const Text = props => {
   return (
-    <p className={props.className} style={props.style}>{props.children}</p>
+    <p
+      css={`text-align: ${props.align}; color: ${props.color}; font-size: ${props.fontSize}; font-weight: ${props.fontWeight}`}
+      {...props}
+    >
+      {props.children}
+    </p>
   );
 };
 
@@ -11,6 +16,8 @@ Text.propTypes = {
   children: PropTypes.string,
   align: PropTypes.oneOf (['left', 'center', 'right', 'justify']),
   color: PropTypes.string,
+  fontSize: PropTypes.string,
+  fontWeight: PropTypes.string,
   whiteSpace: PropTypes.oneOf ([
     'normal',
     'nowrap',
