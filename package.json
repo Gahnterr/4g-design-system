@@ -24,7 +24,7 @@
     "webfontloader": "^1.6.28"
   },
   "scripts": {
-    "start": "uxpin-merge --webpack-config ./webpack.config.js --wrapper ./src/UXPinWrapper/UXPinWrapper.js --uxpin-domain merge.uxpin.cloud",
+    "start": "uxpin-merge --webpack-config ./webpack.config.js --wrapper ./src/UXPinWrapper/UXPinWrapper.js --uxpin-domain uxpin.com",
     "server": "uxpin-merge server --webpack-config ./webpack.uxpin.config.js --wrapper ./src/UXPinWrapper/UXPinWrapper.js",
     "test": "jest",
     "build": "webpack"
