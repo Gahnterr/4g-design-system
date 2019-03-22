@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700');
 
+/* CSS Tenant */
+
 /* Variables de colores y otros valores repetidos frecuentemente */
 :root {
   /* Colores básicos */
@@ -34,6 +36,28 @@
   --body-m2: normal normal 400 16px / normal var(--roboto);
   --enc-titulo: normal normal 500 22px / normal var(--roboto);
   --table-header: normal normal 700 14px / normal var(--roboto);
+
+  /* Colores del Host */
+  --h-fondo: #f4f4f4;
+  --h-fondo-body: #e4e4e4;
+  --h-fondo-oscuro: #dedede;
+  --h-main-base: #28396c;
+  --h-main-light: #2f4380;
+  --h-main-dark: #1c284c;
+  --h-error: #ff0000;
+  --h-brick-red: #cf4c35;
+  --h-iconos-en-navbar: #adb3b8;
+  --h-action-light: #00a9f7;
+  --h-action-base: #0099de;
+  --h-action-dark: #0083bf;
+  --h-texto-regular: #7d7d7d;
+  --h-texto-secundario: #8d8d8d;
+  --h-texto-oscuro: #6d6d6d;
+  --h-bordes: #bcbcbc;
+  --h-success-green: #13c26d;
+  --h-bright-green: #17e57e;
+  --h-advertencia: #f9e700;
+  --h-row-select: #b3e6ff;
 
   /* Easings */
   --anim-out: all ease-in 250ms;
@@ -571,4 +595,45 @@
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+
+/* CSS Host */
+
+/* Menú lateral */
+.host-side-menu {
+  height: 100%;
+  width: 250px;
+  background-color: #1b2250;
+}
+
+.host-side-menu__button {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  width: 100%;
+  height: 40px;
+  color: #adb3b8;
+  border-left: solid 6px var(--no-fill);
+  cursor: pointer;
+}
+
+.host-side-menu__button__title {
+  padding: 0 10px 0 30px;
+}
+
+.host-side-menu__button--active {
+  background: #3498db;
+  color: var(--white);
+  border-left-color: var(--white);
+  pointer-events: none;
+}
+
+.host-side-menu__button:hover {
+  color: var(--white);
+  background-color: #28396c;
+  border-left-color: #bcbcbc;
 }

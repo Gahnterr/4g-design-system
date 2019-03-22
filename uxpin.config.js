@@ -54,6 +54,13 @@ module.exports = {
         ],
       },
       {
+        name: 'Navegación',
+        include: [
+          'src/SideMenu/SideMenu.js',
+          'src/SideMenuButton/SideMenuButton.js',
+        ],
+      },
+      {
         name: 'Elementos básicos de HTML',
         include: ['src/Image/Image.js'],
       },
