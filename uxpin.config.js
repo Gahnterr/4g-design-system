@@ -57,7 +57,8 @@ module.exports = {
         name: 'Navegación',
         include: [
           'src/SideMenu/SideMenu.js',
-          'src/SideMenuButton/SideMenuButton.js',
+          'src/SideMenuItem/SideMenuItem.js',
+          'src/SideMenuItemGroup/SideMenuItemGroup.js',
         ],
       },
       {
