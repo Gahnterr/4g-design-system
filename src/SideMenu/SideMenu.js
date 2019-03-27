@@ -8,9 +8,9 @@ export default class SideMenu extends React.Component {
 
     return (
       <aside className="host-side-menu">
-        <div className="host-side-menu__list">
+        <ul className="host-side-menu__list">
           {props.children}
-        </div>
+        </ul>
         <footer className="host-side-menu__footer">
           <SideMenuItem icon="arrow-left" text="Lista de Modelos" />
         </footer>

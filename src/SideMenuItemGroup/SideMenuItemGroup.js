@@ -1,6 +1,7 @@
 import React from 'react';
 import SideMenuItem from './../SideMenuItem/SideMenuItem';
 import Icon from './../Icon/Icon.js';
+import Collapse from 'react-css-collapse';
 import {PropTypes} from 'prop-types';
 
 export default class SideMenuItemGroup extends React.Component {
@@ -17,24 +18,25 @@ export default class SideMenuItemGroup extends React.Component {
     return (
       <React.Fragment>
         <SideMenuItem
-          icon={props.icon}
-          text={props.text}
+          {...props}
           onClick={this.toggleMenuItem}
-          isActive={state.isActive}
+          isActive={state.isExpanded}
         >
           <Icon
             className="host-side-menu__list__group__caret"
             icon="caret-right"
+            rotate={state.isExpanded ? '90' : '0'}
             size={null}
             color={null}
             fixedWidth
           />
         </SideMenuItem>
-        <div
-          className={`host-side-menu__list__group${state.isExpanded ? ' host-side-menu__list__group--expanded' : ' host-side-menu__list__group--collapsed'}`}
+        <Collapse
+          className="host-side-menu__list__group"
+          isOpen={state.isExpanded}
         >
           {props.children}
-        </div>
+        </Collapse>
       </React.Fragment>
     );
   }
@@ -44,5 +46,6 @@ SideMenuItemGroup.propTypes = {
   children: PropTypes.node,
   icon: PropTypes.string,
   text: PropTypes.string,
+  indentationLevel: PropTypes.number,
   isExpanded: PropTypes.bool,
 };
