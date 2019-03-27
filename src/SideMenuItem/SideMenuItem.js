@@ -6,13 +6,7 @@ export default class SideMenuItem extends React.Component {
   state = {isActive: this.props.isActive};
 
   getLeftPadding = () => {
-    if (this.props.indentationLevel === 0) {
-      return 'padding-left: 10px;';
-    } else if (this.props.indentationLevel === 1) {
-      return 'padding-left: 42px;';
-    } else if (this.props.indentationLevel === 2) {
-      return 'padding-left: 74px;';
-    }
+    return `padding-left: ${10 + 22 * this.props.indentationLevel}px;`;
   };
 
   render () {
@@ -22,7 +16,9 @@ export default class SideMenuItem extends React.Component {
       <li
         className={
           'host-side-menu__list__item' +
-            (props.isActive ? ' host-side-menu__list__item--active' : '')
+            (props.isActive
+              ? ' host-side-menu__list__item--active'
+              : ' host-side-menu__list__item--inactive')
         }
         onClick={props.onClick}
         style={props.style}

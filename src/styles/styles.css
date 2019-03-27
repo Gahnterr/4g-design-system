@@ -640,14 +640,13 @@
   font-family: var(--roboto);
 }
 
-.host-side-menu__list__item--active,
-.host-side-menu__list__item--active:hover {
+.host-side-menu__list__item--active {
   background: #3498db;
   color: var(--white);
   border-left-color: var(--white);
 }
 
-.host-side-menu__list__item:hover {
+.host-side-menu__list__item--inactive:hover {
   color: var(--white);
   background-color: #28396c;
   border-left-color: #bcbcbc;

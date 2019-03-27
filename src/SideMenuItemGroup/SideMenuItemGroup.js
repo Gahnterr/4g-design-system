@@ -25,7 +25,7 @@ export default class SideMenuItemGroup extends React.Component {
           <Icon
             className="host-side-menu__list__group__caret"
             icon="caret-right"
-            rotate={state.isExpanded ? '90' : '0'}
+            rotate={state.isExpanded ? '90' : 'normal'}
             size={null}
             color={null}
             fixedWidth

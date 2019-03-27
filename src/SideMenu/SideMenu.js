@@ -3,6 +3,8 @@ import {PropTypes} from 'prop-types';
 import SideMenuItem from '../SideMenuItem/SideMenuItem';
 
 export default class SideMenu extends React.Component {
+  state = {activeMenuItem: 0};
+
   render () {
     const props = this.props;
 
@@ -21,5 +23,5 @@ export default class SideMenu extends React.Component {
 
 SideMenu.propTypes = {
   children: PropTypes.node,
-  activeMenuItem: PropTypes.string,
+  activeMenuItem: PropTypes.number,
 };
