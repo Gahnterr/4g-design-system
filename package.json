@@ -1,5 +1,6 @@
 {
   "name": "4g-design-system",
+  "description": "Design System para todo del proyecto 4G",
   "version": "0.1.0",
   "private": true,
   "main": "index.js",
