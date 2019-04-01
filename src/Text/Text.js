@@ -13,7 +13,7 @@ const Text = props => {
 };
 
 Text.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.node,
   align: PropTypes.oneOf (['left', 'center', 'right', 'justify']),
   color: PropTypes.string,
   fontSize: PropTypes.string,
