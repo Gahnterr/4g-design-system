@@ -10,10 +10,14 @@ export default class SideMenu extends React.Component {
   };
 
   render () {
-    const children = Children.map (this.props.children, child => {
-      return cloneElement (child, {
-        isActive: true,
-      });
+    const children = Children.map (this.props.children, (child, index) => {
+      if (index === this.state.activeMenuItem) {
+        return cloneElement (child, {
+          isActive: true,
+        });
+      } else {
+        return child;
+      }
     });
 
     return (

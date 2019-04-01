@@ -3,8 +3,6 @@ import {PropTypes} from 'prop-types';
 import Icon from '../Icon/Icon.js';
 
 export default class SideMenuItem extends React.Component {
-  state = {isActive: this.props.isActive};
-
   getLeftPadding = () => {
     return `padding-left: ${10 + 22 * this.props.indentationLevel}px;`;
   };

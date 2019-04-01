@@ -17,11 +17,7 @@ export default class SideMenuItemGroup extends React.Component {
 
     return (
       <React.Fragment>
-        <SideMenuItem
-          {...props}
-          onClick={this.toggleMenuItem}
-          isActive={state.isExpanded}
-        >
+        <SideMenuItem {...props} onClick={this.toggleMenuItem}>
           <Icon
             className="host-side-menu__list__group__caret"
             icon="caret-right"
