@@ -11,6 +11,7 @@ module.exports = {
           'src/Selectlist/Selectlist.js',
           'src/Dropdown/Dropdown.js',
           'src/DropdownItem/DropdownItem.js',
+          'src/RadioButton/RadioButton.js',
         ],
       },
       {
