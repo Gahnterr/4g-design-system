@@ -3,27 +3,33 @@ import {PropTypes} from 'prop-types';
 import SideMenuItem from '../SideMenuItem/SideMenuItem';
 
 export default class SideMenu extends React.Component {
-  state = {activeMenuItem: 0};
+  state = {activeMenuItem: this.props.activeMenuItem};
 
-  toggleActiveMenuItem = e => {
-    this.setState ({activeMenuItem: e.target.value});
+  toggleActiveMenuItem = index => {
+    this.setState ({activeMenuItem: index});
   };
 
   render () {
-    const children = Children.map (this.props.children, (child, index) => {
-      if (index === this.state.activeMenuItem) {
+    const {children} = this.props;
+    const {activeMenuItem} = this.state;
+
+    const getChildren = Children.map (children, (child, index) => {
+      if (index === activeMenuItem) {
         return cloneElement (child, {
-          isActive: true,
+          isExpanded: true,
+          key: index.toString (),
         });
       } else {
-        return child;
+        return cloneElement (child, {
+          key: index.toString (),
+        });
       }
     });
 
     return (
       <aside className="host-side-menu">
         <ul className="host-side-menu__list">
-          {children}
+          {getChildren}
         </ul>
         <footer className="host-side-menu__footer">
           <SideMenuItem icon="arrow-left" text="Lista de Modelos" />
