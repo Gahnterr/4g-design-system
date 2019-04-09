@@ -4,7 +4,7 @@ import {PropTypes} from 'prop-types';
 const ProcessButton = props => {
   return (
     <button
-      className={'btn btn--proceso' + props.className}
+      className={'btn btn--proceso ' + props.className}
       style={props.style}
       type="button"
       onClick={props.onClick}
