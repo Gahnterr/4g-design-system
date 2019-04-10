@@ -4,8 +4,14 @@ import {PropTypes} from 'prop-types';
 const Text = props => {
   return (
     <p
-      css={`text-align: ${props.align}; color: ${props.color}; font-size: ${props.fontSize}; font-weight: ${props.fontWeight}`}
       {...props}
+      css={`
+        text-align: ${props.align};
+        color: ${props.color};
+        font-size: ${props.fontSize};
+        font-weight: ${props.fontWeight};
+      `}
+      className={props.className}
     >
       {props.children}
     </p>
@@ -14,11 +20,11 @@ const Text = props => {
 
 Text.propTypes = {
   children: PropTypes.node,
-  align: PropTypes.oneOf (['left', 'center', 'right', 'justify']),
+  align: PropTypes.oneOf(['left', 'center', 'right', 'justify']),
   color: PropTypes.string,
   fontSize: PropTypes.string,
   fontWeight: PropTypes.string,
-  whiteSpace: PropTypes.oneOf ([
+  whiteSpace: PropTypes.oneOf([
     'normal',
     'nowrap',
     'pre',
@@ -37,4 +43,4 @@ Text.defaultProps = {
   whiteSpace: 'initial',
 };
 
-export {Text as default};
+export default Text;
