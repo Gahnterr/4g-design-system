@@ -12,7 +12,8 @@ export default (
   <Modal uxpId="modal.1">
     <ModalHeader uxpId="modal.header.1" title="Encabezado del modal" />
     <ModalBody uxpId="modal.body.1">
-      Cuerpo del modal. Escribe texto aquí, o bien, agrega más componentes de código a este cuerpo.
+      Cuerpo del modal. Escribe texto aquí, o bien, agrega más componentes de
+      código a este cuerpo.
     </ModalBody>
     <ModalFooter uxpId="modal.footer.1">
       <CSSGridContainer
@@ -23,7 +24,9 @@ export default (
         gridColumnGap="10px"
       >
         <CSSGridItem uxpId="cssgrid.item.1" alignSelf="center" gridArea=" ">
-          <Link uxpId="link.1" size="regular">Regresar</Link>
+          <Link uxpId="link.1" size="regular">
+            Regresar
+          </Link>
         </CSSGridItem>
         <CSSGridItem uxpId="cssgrid.item.2" gridArea=" ">
           <Button uxpId="button.secundario.1" type="secundario">

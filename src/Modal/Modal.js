@@ -4,7 +4,7 @@ import {PropTypes} from 'prop-types';
 export default class Modal extends React.Component {
   state = {show: true};
 
-  render () {
+  render() {
     const props = this.props;
 
     return (

@@ -5,22 +5,22 @@ import Icon from '../Icon/Icon.js';
 const Button = props => {
   return (
     <button
-      className={`btn btn--${props.type + (props.destructive ? ' btn--destructivo' : '')}`}
+      className={`btn btn--${props.type +
+        (props.destructive ? ' btn--destructivo' : '')}`}
       type="button"
-      disabled={props.disabled}
-      onClick={props.onClick}
+      {...props}
     >
-      {props.icon || props.type === 'terciario'
-        ? <Icon
-            className={`btn__icono btn__icono--${props.type + (props.destructive ? ' btn__icono--destructivo' : '')}`}
-            color="none"
-            icon={!props.icon && props.type === 'terciario' ? 'fa' : props.icon}
-            size="lg"
-            fixedWidth
-            spin={props.iconSpin}
-            pulse={props.iconPulse}
-          />
-        : null}
+      {props.icon ? (
+        <Icon
+          className={`btn__icono btn__icono--${props.type +
+            (props.destructive ? ' btn__icono--destructivo' : '')}`}
+          color="none"
+          icon={props.icon}
+          size="lg"
+          fixedWidth
+          {...props}
+        />
+      ) : null}
       {props.children}
     </button>
   );
@@ -32,7 +32,7 @@ Button.propTypes = {
    * Primario: Botón para acciones principales. Tiene mayor importancia jerárquica.
    * Secundario: Botón para acciones secundarios y menor importancia jerárquica.
    */
-  type: PropTypes.oneOf (['primario', 'secundario', 'terciario']),
+  type: PropTypes.oneOf(['primario', 'secundario']),
   /**
    * Texto dentro del botón.
    */
@@ -45,15 +45,16 @@ Button.propTypes = {
   iconSpin: PropTypes.bool,
   iconPulse: PropTypes.bool,
   /**
-   * Indica si el botón se encuentra deshabilitado o no. Si está deshabilitado, no funcionarán sus 
+   * Indica si el botón se encuentra deshabilitado o no. Si está deshabilitado, no funcionarán sus
    */
   disabled: PropTypes.bool,
   /**
    * Sólo funciona con botones terciarios.
-   * 
+   *
    * Le da estilo de un botón destructivo, como en el caso del botón "Cerrar sesión"
    */
   destructive: PropTypes.bool,
+  style: PropTypes.object,
 };
 
 Button.defaultProps = {
