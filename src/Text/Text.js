@@ -19,7 +19,7 @@ const Text = props => {
 };
 
 Text.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.any,
   align: PropTypes.oneOf(['left', 'center', 'right', 'justify']),
   color: PropTypes.string,
   fontSize: PropTypes.string,
