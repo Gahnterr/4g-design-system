@@ -45,7 +45,7 @@ const ModalM2 = props => {
           autoHeight={false}
         >
           <CSSGridItem alignSelf="center">
-          {props.type === "error" ? null : <Link onClick={props.handleLink}>Regresar</Link> }
+          {props.type === "error" || props.type === "exito" ? null : <Link onClick={props.handleLink}>Regresar</Link> }
           </CSSGridItem>
           <CSSGridItem>
             <Button onClick={props.handleButton}>Aceptar</Button>
