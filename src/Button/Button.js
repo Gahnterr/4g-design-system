@@ -32,7 +32,7 @@ Button.propTypes = {
    * Primario: Botón para acciones principales. Tiene mayor importancia jerárquica.
    * Secundario: Botón para acciones secundarios y menor importancia jerárquica.
    */
-  type: PropTypes.oneOf(['primario', 'secundario']),
+  type: PropTypes.oneOf(['primario', 'secundario', 'terciario']),
   /**
    * Texto dentro del botón.
    */
