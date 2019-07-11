@@ -5,7 +5,7 @@ import {PropTypes} from 'prop-types';
 const Selectlist = props => {
   const {disabled, label, options} = props; 
   
-  const renderOptions = return options.map((option, index) => (
+  const renderOptions = options.map((option, index) => (
     <option className="temis-selectlist__option">{option}</option>
   ));
   
