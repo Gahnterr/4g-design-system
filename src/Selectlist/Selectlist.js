@@ -1,32 +1,26 @@
-import React from 'react';
-import Label from '../Label/Label';
-import {PropTypes} from 'prop-types';
+import React from "react";
+import Label from "../Label/Label";
+import { PropTypes } from "prop-types";
 
 const Selectlist = props => {
-  const {disabled, label, options} = props; 
-  
+  const { label, options } = props;
+
   const renderOptions = options.map((option, index) => (
     <option className="temis-selectlist__option">{option}</option>
   ));
-  
+
   return (
-      <React.Fragment>
-        {label
-          ? <Label>
-              {label}
-            </Label>
-          : null}
-        <select
-          className="temis-selectlist"
-        >
-    {renderOptions}
-        </select>
-      </React.Fragment>
-    );
-}
+    <React.Fragment>
+      {label ? <Label>{label}</Label> : null}
+      <select className="temis-selectlist" {...props}>
+        {renderOptions}
+      </select>
+    </React.Fragment>
+  );
+};
 
 Selectlist.propTypes = {
-  /** Define el texto que irá en la etiqueta. 
+  /** Define el texto que irá en la etiqueta.
    * Si lo dejas vacío, no se renderizará la etiqueta.  */
   label: PropTypes.string,
   /** Introduce componentes "SelectItem" para popular el dropdown de este componente. */
@@ -35,9 +29,9 @@ Selectlist.propTypes = {
    * Indica el valor precargado por defecto.
    */
   defaultValue: PropTypes.string,
-  disabled: PropTypes.bool,
+  disabled: PropTypes.bool
 };
 
 Selectlist.defaultProps = {
-  label: 'Países:',
+  label: "Países:"
 };
