@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700");
 
 /* CSS Tenant */
 
@@ -29,7 +29,7 @@
   --advertencia: #ffd54f;
 
   /* Texto */
-  --roboto: 'Roboto', 'Arial', sans-serif;
+  --roboto: "Roboto", "Arial", sans-serif;
   --body-parrafo: normal normal 400 14px / normal var(--roboto);
   --body-m2: normal normal 400 16px / normal var(--roboto);
   --enc-titulo: normal normal 500 22px / normal var(--roboto);
@@ -372,43 +372,21 @@
 }
 
 /* Select list */
-.temis-selectlist__control {
+
+.temis-selectlist {
   min-height: 30px;
-}
-
-.temis-dropdown {
-  display: block;
-  position: absolute;
-  width: 100%;
-  box-sizing: border-box;
-  max-height: 300px;
-  border: solid 1px var(--bordes);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  width: auto;
   font-family: var(--roboto);
-  font-size: 14px;
-  font-weight: 400;
-  list-style-type: none;
-  overflow-y: auto;
+  font: var(--texto-regular);
+  border-color: var(--bordes);
 }
 
-.temis-dropdown__item {
-  display: flex;
-  height: 30px;
-  padding: 0 10px;
-  align-items: center;
-  background-color: white;
-  color: var(--texto-regular);
-  cursor: default;
+.temis-selectlist:focus {
+  border-color: var(--primario-base);
 }
 
-.temis-dropdown__item:hover {
-  background-color: var(--primario-light);
-  color: white;
-}
-
-.temis-dropdown__item--disabled {
-  color: var(--texto-auxiliar);
-  pointer-events: none;
+.temis-selectlist:disabled {
+  opacity: 0.5;
 }
 
 /* Títulos de encabezados */
