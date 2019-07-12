@@ -6,7 +6,9 @@ const Selectlist = props => {
   const { label, options } = props;
 
   const renderOptions = options.map((option, index) => (
-    <option className="temis-selectlist__option">{option}</option>
+    <option className="temis-selectlist__option" key={index}>
+      {option}
+    </option>
   ));
 
   return (
@@ -24,14 +26,11 @@ Selectlist.propTypes = {
    * Si lo dejas vacío, no se renderizará la etiqueta.  */
   label: PropTypes.string,
   /** Introduce componentes "SelectItem" para popular el dropdown de este componente. */
-  options: PropTypes.array,
-  /**
-   * Indica el valor precargado por defecto.
-   */
-  defaultValue: PropTypes.string,
-  disabled: PropTypes.bool
+  options: PropTypes.array
 };
 
 Selectlist.defaultProps = {
   label: "Países:"
 };
+
+export default Selectlist;
