@@ -37,6 +37,7 @@ export default class Textarea extends React.Component {
           : null}
         <textarea
           className={`textarea texto-regular${state.error ? ' textarea--error' : ''}`}
+          style={{height: props.rows === 0 ? "auto" : ""}}
           onBlur={this.handleBlur}
           onChange={this.handleChange}
           value={state.value}
