@@ -29,7 +29,8 @@ Selectlist.propTypes = {
    * Si lo dejas vacío, no se renderizará la etiqueta.  */
   label: PropTypes.string,
   /** Introduce componentes "SelectItem" para popular el dropdown de este componente. */
-  options: PropTypes.array
+  options: PropTypes.array,
+  disabled: PropTypes.bool
 };
 
 Selectlist.defaultProps = {
