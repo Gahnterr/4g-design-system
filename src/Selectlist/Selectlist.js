@@ -6,7 +6,7 @@ const Selectlist = props => {
   const { label, options } = props;
 
   const renderOptions = options.map((option, index) => (
-    <option className="temis-selectlist__option" key={index}>
+    <option className="temis-selectlist__option" key={index} value={option}>
       {option}
     </option>
   ));
@@ -15,6 +15,9 @@ const Selectlist = props => {
     <React.Fragment>
       {label ? <Label>{label}</Label> : null}
       <select className="temis-selectlist" {...props}>
+        <option selected disabled value="">
+          Seleccione una opción...
+        </option>
         {renderOptions}
       </select>
     </React.Fragment>
