@@ -42,9 +42,7 @@ export default class Textarea extends React.Component {
           onChange={this.handleChange}
           value={state.value}
           {...props}
-        >
-          {props.children}
-        </textarea>
+        />
       </React.Fragment>
     );
   }
@@ -59,7 +57,7 @@ Textarea.propTypes = {
   /**
    * Interacción que se ejecutará al cambiar el valor del input.
    */
-  children: PropTypes.string,
+  value: PropTypes.string,
   onChange: PropTypes.func,
   /**
    * Interacción que se ejecutará al hacer clic sobre el text area.
