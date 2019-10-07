@@ -30,7 +30,7 @@ const Icon = props => {
   };
 
   return (
-    <div>
+    <div style={{width: "auto", height: "auto"}}>
       <i
         className={`fa fa-${props.icon} fa-${props.size}${
           props.rotate !== 'normal' ? ' fa-rotate-' + props.rotate : ''
